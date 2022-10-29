@@ -52,19 +52,27 @@ Route::post('/designs/update/{id}', [DesignController::class,'UpdateDesigns']);
 Route::get('/designs/delete/{id}', [DesignController::class,'DeleteDesigns']);
 
 
+//user
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
    
     Route::get('/dashboard', function () {
         //$users=User::all();
 
-        return view('staff.index');
+       // return view('staff.index');
+         return view('frontend.index');
         
-    })->name('dashboard');
+    });
     
 });
 
+//Route::get('/', [IndexController::class,'index']);
 
-//customers
+
+
+
+
+
+//user
 
 Route::middleware('staffs:staffs')->group(function() {
     {
