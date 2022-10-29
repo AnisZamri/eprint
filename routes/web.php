@@ -4,7 +4,6 @@ use App\Models\z;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DesignController;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -67,24 +66,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 //customers
 
-Route::middleware('customers:customers')->group(function() {
-    {
-        Route::get('customers/login', [CustomerController::class,'loginForm']);
-        Route::post('customers/login', [CustomerController::class,'store'])->name('customers.login');
-
-    }
-});
-
-Route::middleware(['auth:sanctum,customers',config('jetstream.auth_session'),'verified'])->group(function () {
-   
-    Route::get('/customers/dashboard', function () {
-       return view('dashboard');
-            })->name('dashboard');
-    
-});
-
-//staff
-
 Route::middleware('staffs:staffs')->group(function() {
     {
         Route::get('staffs/login', [StaffController::class,'loginForm']);
@@ -96,10 +77,28 @@ Route::middleware('staffs:staffs')->group(function() {
 Route::middleware(['auth:sanctum,staffs',config('jetstream.auth_session'),'verified'])->group(function () {
    
     Route::get('/staffs/dashboard', function () {
-       return view('dashboard');
+       return view('staff.index');
             })->name('dashboard');
     
 });
+
+//staff
+
+// Route::middleware('staffs:staffs')->group(function() {
+//     {
+//         Route::get('staffs/login', [StaffController::class,'loginForm']);
+//         Route::post('staffs/login', [StaffController::class,'store'])->name('staffs.login');
+
+//     }
+// });
+
+// Route::middleware(['auth:sanctum,staffs',config('jetstream.auth_session'),'verified'])->group(function () {
+   
+//     Route::get('/staffs/dashboard', function () {
+//        return view('dashboard');
+//             })->name('dashboard');
+    
+// });
 
 Route::get('/user/logout', [ProductsController::class,'Logout'])->name('logout');
 

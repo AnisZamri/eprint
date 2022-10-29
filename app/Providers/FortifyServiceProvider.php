@@ -16,7 +16,7 @@ use App\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use App\Actions\Fortify\AttemptToAuthenticate;
 use App\Actions\Fortify\RedirectIfTwoFactorAuthenticatable;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\StaffController;
 use Auth;
 
 
@@ -29,9 +29,9 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->when([CustomerController::class,AttemptToAuthenticate::class,
+        $this->app->when([StaffController::class,AttemptToAuthenticate::class,
         RedirectIfTwoFactorAuthenticatable::class ])->needs(StatefulGuard::class)->give(function(){
-            return Auth::guard('customers');
+            return Auth::guard('staffs');
         });
     }
 

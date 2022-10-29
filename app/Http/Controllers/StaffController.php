@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Staffs;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -118,4 +118,3 @@ class StaffController extends Controller
         return app(LogoutResponse::class);
     }
 }
-
