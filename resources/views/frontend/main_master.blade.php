@@ -20,8 +20,10 @@
   <link href="  {{asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="  {{asset('frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
   <link href="  {{asset('frontend/assets/vendor/aos/aos.css')}}" rel="stylesheet">
-  <link href="  {{asset('frontend/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="  {{asset('frontend/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
   <link href="  {{asset('frontend/assets/css/main.css')}} " rel="stylesheet">
