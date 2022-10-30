@@ -14,7 +14,7 @@ w3-grayscale-min
 
  <style>
 h1 {font-family: "Open Sans"; font-size: 500%;}
-h5 {font-family: "Open Sans"; font-size: 300%;}
+h5 {font-family: "Open Sans"; font-size: 310%;}
 
 
 
