@@ -16,7 +16,7 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
                            
-                    <x-jet-nav-link href="{{ route('allproducts') }}">
+                    <x-jet-nav-link href="{{ route('staff.allproducts') }}">
                         {{ __('Products') }}
                     </x-jet-nav-link>
 

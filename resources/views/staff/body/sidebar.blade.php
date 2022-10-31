@@ -16,13 +16,13 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{route('allproducts')}}">
+        <a href="{{route('staff.allproducts')}}">
           <i class="bi bi-circle"></i><span>All Products</span>
         </a>
       </li>
       <li>
-        <a href="components-badges.html">
-          <i class="bi bi-circle"></i><span>Banting</span>
+        <a href="{{route('staff.allproducts')}}">
+          <i class="bi bi-circle"></i><span>Test</span>
         </a>
       </li>
       <li>

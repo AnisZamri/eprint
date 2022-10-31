@@ -21,8 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Product Controller
-Route::get('/products/all', [ProductsController::class,'AllProducts'])->name('allproducts');
+Route::get('/products/staff/all', [ProductsController::class,'AllStaffProducts'])->name('staff.allproducts');
+Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name('allproducts');
 
 //Add Product Controller
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');

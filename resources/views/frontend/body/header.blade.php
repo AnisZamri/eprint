@@ -10,29 +10,28 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
+          <li><a href='/dashboard'>Home</a></li>
+          <li><a href="{{ route ('allproducts') }}">Products</a></li>
+
            <!--<li><a href="#about">Product</a></li>-->
            <!-- <li><a href="#menu">Menu</a></li>-->
            <!--<li><a href="#events">Events</a></li>-->
            <!--<li><a href="#chefs">Chefs</a></li>-->
            <!--<li><a href="#gallery">Gallery</a></li>-->
-          <li class="dropdown"><a href="#"><span>Product</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+           <!--<li class="dropdown"><a href="#"><span>Product</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="#">All</a></li>
-              <li class="dropdown"><a href="#"><span>Sticker</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
+              <li><a href="{{ route('allproducts') }}">All</a></li>
+               
+                <li><a href="#">Sticker</a></li>
+
                   <li><a href="#">Banner</a></li>
                   <li><a href="#">Banting</a></li>
                   <li><a href="#">Business Card</a></li>
                   <li><a href="#">Flyers</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Banner</a></li>
-              <li><a href="#">Banting</a></li>
-              <li><a href="#">Business Card</a></li>
+                </li>
+             
             </ul>
-          </li>
+          </li>-->
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
