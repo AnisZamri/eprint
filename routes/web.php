@@ -24,6 +24,10 @@ Route::get('/', function () {
 Route::get('/products/staff/all', [ProductsController::class,'AllStaffProducts'])->name('staff.allproducts');
 Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name('allproducts');
 
+
+/*staff add product homepage*/
+Route::get('/staff/products/add', [ProductsController::class,'AddStaffProduct'])->name('addStaffProducts');
+
 //Add Product Controller
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
 

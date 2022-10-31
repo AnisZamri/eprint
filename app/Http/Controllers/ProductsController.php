@@ -19,6 +19,11 @@ class ProductsController extends Controller
         return view('customers.product.allCustProduct',compact('product'));
     }
 
+    public function AddStaffProduct(){ 
+        $product=Products::all();
+        return view('staff.products.addStaffProduct',compact('product'));
+    } 
+
     public function AddProducts(Request $request){
         $validatedData = $request->validate([
             'productName' => ['required', 'unique:products', 'max:255'],
