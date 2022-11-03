@@ -110,6 +110,47 @@ body, html {
 }
 
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  padding-left: 400px; /* Location of the box */
+  padding-right: 400px; /* Location of the box */
+  left: 10;
+  top: 10;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 </style>
 </head>
@@ -131,6 +172,50 @@ body, html {
 
 <!-- ======= Menu Section ======= -->
 <a class="button" href="">Add Product</a>
+<button id="myBtn">Add Product</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <h3 class="tab-header text-center" >Add Product</h3> 
+
+    <form action="{{ route('addProducts')}}" method="POST">  
+        @csrf 
+  
+   <div class="mb-3"> 
+    <label for="productName" class="form-label">Product Name</label> 
+    <input type="text" name="productName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+     
+    @error('productName') 
+        <span class="text-danger">{{$message}}</span> 
+    @enderror 
+</div> 
+ 
+  <div class="mb-3"> 
+    <label for="exampleInputPassword1" class="form-label">Product Type</label> 
+    <input type="text" name="productType" class="form-control" id="exampleInputPassword1"> 
+  </div> 
+ 
+  <div class="mb-3"> 
+    <label for="exampleInputPassword1" class="form-label">Description</label> 
+    <input type="text" name="productDesc" class="form-control" id="exampleInputPassword1"> 
+  </div> 
+ 
+  <div class="mb-3"> 
+    <label for="exampleInputPassword1" class="form-label">Price</label> 
+    <input type="text" name="productPrice" class="form-control" id="exampleInputPassword1"> 
+  </div> 
+ 
+  
+   <button type="submit" class="btn btn-primary ">Add Product</button> 
+</form> 
+  </div>
+
+</div>
 
 
 
@@ -228,6 +313,31 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 </script>
 
