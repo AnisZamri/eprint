@@ -77,7 +77,7 @@
           <div class="card-header">Add product </div> 
          <div class="card-body"> 
     
-    <form action="{{route('addProducts')}}" method="POST"> 
+    <form action="{{ route('addProducts')}}" method="POST">  
         @csrf 
   
    <div class="mb-3"> 

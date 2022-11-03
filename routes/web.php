@@ -21,12 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products/staff/all', [ProductsController::class,'AllStaffProducts'])->name('staff.allproducts');
+/*staff add edit update delete*/
+
+
 Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name('allproducts');
 
 
 /*staff add product homepage*/
-Route::get('/staff/products/add', [ProductsController::class,'AddStaffProduct'])->name('addStaffProducts');
+Route::get('/staff/products/all', [ProductsController::class,'AllStaffProduct'])->name('allStaffProducts');
 
 //Add Product Controller
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');

@@ -9,19 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
-    public function AllStaffProducts(){
-        $product=Products::all();
-        return view('staff.products.allProducts',compact('product'));
-    }
-
+   
     public function AllCustProduct(){
         $product=Products::all();
         return view('customers.product.allCustProduct',compact('product'));
     }
 
-    public function AddStaffProduct(){ 
+    public function AllStaffProduct(){ 
         $product=Products::all();
-        return view('staff.products.addStaffProduct',compact('product'));
+        return view('staff.products.allStaffProduct',compact('product'));
     } 
 
     public function AddProducts(Request $request){

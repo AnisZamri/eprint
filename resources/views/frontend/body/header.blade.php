@@ -33,6 +33,16 @@
             </ul>
           </li>-->
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Profile</a></li>
+
+
+          <li><a href="{{ route('logout') }}">Logout</a></li>
+
+          <!--<li><a href="{{ route('profile.show') }}">Profile</a></li></li>-->
+        
+
+          
+          
         </ul>
       </nav><!-- .navbar -->
 

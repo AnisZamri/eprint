@@ -109,6 +109,8 @@ body, html {
   cursor: pointer;
 }
 
+
+
 </style>
 </head>
 <body>
@@ -128,7 +130,9 @@ body, html {
 <main id="main">
 
 <!-- ======= Menu Section ======= -->
-<a class="button" href="{{ route('staff.allproducts') }}">Add Product</a>
+<a class="button" href="">Add Product</a>
+
+
 
 <section id="menu" class="menu">
 <div class="container" data-aos="fade-up">
@@ -189,6 +193,7 @@ body, html {
    <p class="w3-opacity">STARTING AT</p>
    <p>RM16</p>
  </div>
+
 </div>
 </div>
 </div>
@@ -222,6 +227,8 @@ function w3_open() {
 function w3_close() {
     mySidebar.style.display = "none";
 }
+
+
 </script>
 
 </body>

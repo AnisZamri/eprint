@@ -20,7 +20,7 @@
                         {{ __('Products') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('alldesigns') }}">
+                    <x-jet-nav-link href="{{ route('') }}">
                         {{ __('Design') }}
                     </x-jet-nav-link>
                 </div>

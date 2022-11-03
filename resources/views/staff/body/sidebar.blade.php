@@ -16,12 +16,12 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ route ('addStaffProducts') }}">
+        <a href="{{ route ('allStaffProducts') }}">
           <i class="bi bi-circle"></i><span>All Products</span>
         </a>
       </li>
       <li>
-        <a href="{{route('staff.allproducts')}}">
+        <a href="">
           <i class="bi bi-circle"></i><span>Test</span>
         </a>
       </li>
