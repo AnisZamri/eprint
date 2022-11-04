@@ -38,8 +38,24 @@ class SubProductsController extends Controller
         ]);
 
         return Redirect()->back()->with('success','Category Successful Inserted');
-
-        
-    
     }
+
+    public function EditSubProducts($id){
+        $products=Products::orderBy('productName','ASC')->get();
+        $subproduct=SubProducts::findOrFail($id);
+        return view('staff.products.editSubProducts',compact('subproduct','products'));
+    }
+
+    public function UpdateSubProducts(Request $request, $id){
+        $update=Products::find($id)->update([
+            'productName'=>$request->productName,
+            'user_id'=>Auth::user()->id,
+            'productType'=>$request->productType,
+            'productDesc'=>$request->productDesc,
+            'productPrice'=>$request->productPrice,
+        ]);
+
+        return Redirect()->route('allproducts')->with('success','Category Updated Successful');
+    }
+
 }

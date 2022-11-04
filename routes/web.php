@@ -57,10 +57,10 @@ Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->
 Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
 
 // //Edit SubProduct Controller
-// Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSub']);
+Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProducts'])->name('editSubProducts');
 
 // //Update SubProduct Controller
-// Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSub']);
+Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProducts']);
 
 // //Delete SubProduct Controller
 // Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSub']);
