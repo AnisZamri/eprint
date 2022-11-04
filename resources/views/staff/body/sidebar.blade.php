@@ -21,6 +21,13 @@
         </a>
       </li>
       <li>
+        <a href="{{ route ('viewSub') }}">
+          <i class="bi bi-circle"></i><span>Sub Products</span>
+        </a>
+      </li>
+
+      
+      <li>
         <a href="">
           <i class="bi bi-circle"></i><span>Test</span>
         </a>

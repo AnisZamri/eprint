@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\SubProducts;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;

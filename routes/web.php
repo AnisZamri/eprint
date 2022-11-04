@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SubProductsController;
+use App\Http\Controllers\Carbon;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +44,33 @@ Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']
 
 //Delete Product Controller
 Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
+
+
+
+/*********************SUB PRODUCT***************/
+
+
+/*staff add SubProduct homepage*/
+Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->name('viewSub');
+
+// //Add SubProduct Controller
+Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
+
+// //Edit SubProduct Controller
+// Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSub']);
+
+// //Update SubProduct Controller
+// Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSub']);
+
+// //Delete SubProduct Controller
+// Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSub']);
+
+
+
+
+
+
+
 
 //Design Controller
 Route::get('/designs/all', [DesignController::class,'AllDesigns'])->name('alldesigns');
