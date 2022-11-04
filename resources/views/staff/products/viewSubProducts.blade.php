@@ -37,12 +37,11 @@
   <thead> 
     <tr> 
       <th scope="col">No</th> 
-      <th scope="col"> Name</th> 
-      <th scope="col">Product Name</th> 
-      <th scope="col">Type</th> 
-      <th scope="col">Description</th> 
-      <th scope="col">Price</th> 
-      <th scope="col">Action</th> 
+      <th scope="col"> Product Type</th> 
+      <th scope="col">Product Sticker</th> 
+      <th scope="col">Product Banner</th> 
+      <th scope="col">Product Banting</th> 
+   
  
  
     </tr> 
