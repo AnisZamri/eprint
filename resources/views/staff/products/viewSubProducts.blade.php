@@ -56,7 +56,8 @@
       <td>{{$sub->subProductBanner}}</td> 
       <td>{{$sub->subProductBanting}}</td> 
       <td> 
-        <a href=""class="btn btn-info">Edit</a> 
+
+        <a href="{{url('sub/edit/'.$sub->id)}}"class="btn btn-info">Edit</a> 
 
  
       </td> 

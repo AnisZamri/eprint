@@ -19,7 +19,7 @@
           <div class="card-header">Edit product </div> 
          <div class="card-body"> 
     
-         <form action="" method="POST">  
+         <form action="{{ route('updateSubProduct')}}"  method="POST">  
         @csrf 
   
         <!-- <div class="mb-3"> 
@@ -32,13 +32,14 @@
           </select>
         </div>     -->
            
+        <input type="hidden" name="id" value"{{$subproduct->id}}">
         <div class="mb-3"> 
             <label for="exampleInputPassword1" class="form-label">Product Type</label> 
            <select class="form-select" name="productsId" aria-label="Default select example">
                       <option value="" selected="" disabled="">Select Product</option>
                       
                       @foreach($products as $products)
-                      <option style="color: black" value="{{$products->id}}">{{$products->subProductSticker}}</option>
+                      <option style="color: black" value="{{$products->id}}" {{$products->productType}}</option>
                       @endforeach
             </select>
           </div>    
@@ -46,7 +47,7 @@
 
            <div class="mb-3"> 
             <label for="productName" class="form-label">Product Sticker</label> 
-            <input type="text" name="subProductSticker" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+            <input type="text" name="subProductSticker" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductSticker}}"> 
             
             @error('subProductSticker') 
                 <span class="text-danger">{{$message}}</span> 
@@ -55,7 +56,7 @@
 
            <div class="mb-3"> 
             <label for="productName" class="form-label">Product Banner</label> 
-            <input type="text" name="subProductBanner" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+            <input type="text" name="subProductBanner" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductBanner}}"> 
             
             @error('subProductBanner') 
                 <span class="text-danger">{{$message}}</span> 
@@ -64,7 +65,7 @@
 
            <div class="mb-3"> 
             <label for="productName" class="form-label">Product Banting</label> 
-            <input type="text" name="subProductBanting" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+            <input type="text" name="subProductBanting" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductSticker}}">
             
             @error('subProductBanting') 
                 <span class="text-danger">{{$message}}</span> 

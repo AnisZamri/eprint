@@ -40,22 +40,24 @@ class SubProductsController extends Controller
         return Redirect()->back()->with('success','Category Successful Inserted');
     }
 
-    public function EditSubProducts($id){
+    public function EditSubProduct($id){
         $products=Products::orderBy('productName','ASC')->get();
         $subproduct=SubProducts::findOrFail($id);
-        return view('staff.products.editSubProducts',compact('subproduct','products'));
+        return view('staff.products.editSubProduct',compact('products','subproduct'));
     }
 
-    public function UpdateSubProducts(Request $request, $id){
-        $update=Products::find($id)->update([
-            'productName'=>$request->productName,
-            'user_id'=>Auth::user()->id,
-            'productType'=>$request->productType,
-            'productDesc'=>$request->productDesc,
-            'productPrice'=>$request->productPrice,
+    public function UpdateSubProduct(Request $request){
+       
+        $sub_id=$request->id;
+        
+        SubProducts::findOrFail($sub_id)->update([
+            'productsId'=>$request->productsId,
+            'subProductSticker'=>$request->subProductSticker,
+            'subProductBanner'=>$request->subProductBanner,
+            'subProductBanting'=>$request->subProductBanting,
+            'created_at'=>Carbon::now()
         ]);
-
-        return Redirect()->route('allproducts')->with('success','Category Updated Successful');
+        return Redirect()->route('viewSub')->with('success','Category Updated Successful');
     }
 
 }
