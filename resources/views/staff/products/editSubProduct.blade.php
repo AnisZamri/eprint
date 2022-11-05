@@ -19,7 +19,8 @@
           <div class="card-header">Edit product </div> 
          <div class="card-body"> 
     
-         <form action="{{ route('updateSubProduct')}}"  method="POST">  
+         <form action="{{url('sub/update/'.$subproduct->id)}}"  method="POST">  
+
         @csrf 
   
         <!-- <div class="mb-3"> 
@@ -32,7 +33,7 @@
           </select>
         </div>     -->
            
-        <input type="hidden" name="id" value"{{$subproduct->id}}">
+
         <div class="mb-3"> 
             <label for="exampleInputPassword1" class="form-label">Product Type</label> 
            <select class="form-select" name="productsId" aria-label="Default select example">

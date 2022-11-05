@@ -46,18 +46,15 @@ class SubProductsController extends Controller
         return view('staff.products.editSubProduct',compact('products','subproduct'));
     }
 
-    public function UpdateSubProduct(Request $request){
-       
-        $sub_id=$request->id;
-        
-        SubProducts::findOrFail($sub_id)->update([
+    public function UpdateSubProduct(Request $request, $id){
+        $update=SubProducts::find($id)->update([
             'productsId'=>$request->productsId,
-            'subProductSticker'=>$request->subProductSticker,
-            'subProductBanner'=>$request->subProductBanner,
-            'subProductBanting'=>$request->subProductBanting,
-            'created_at'=>Carbon::now()
+                'subProductSticker'=>$request->subProductSticker,
+                'subProductBanner'=>$request->subProductBanner,
+                'subProductBanting'=>$request->subProductBanting,
+                'created_at'=>Carbon::now()
         ]);
-        return Redirect()->route('viewSub')->with('success','Category Updated Successful');
+
     }
 
-}
+};
