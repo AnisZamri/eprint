@@ -65,7 +65,14 @@ Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'
 // //Delete SubProduct Controller
 Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
 
+/*cust view SubProduct homepage*/
+Route::get('/products/subproducts', [SubProductsController::class,'SubProductsCustView'])->name('subProductsCustView');
 
+/*********************ORDER**************/
+
+
+/*cust create order*/
+Route::get('/products/subproducts/order', [SubProductsController::class,'CreateOrder'])->name('createOrder');
 
 
 

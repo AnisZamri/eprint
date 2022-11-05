@@ -43,7 +43,8 @@ h5 {font-family: "Open Sans"; font-size: 310%;}
 
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-      <a href="#">
+        
+      <a href="{{url('/products/subproducts')}}">
         <img src="{{asset('frontend/assets/img/product/sticker.png')}}" alt="John" style="width:100%">
         <div class="w3-container">
           <h4><b>Sticker</b></h4>

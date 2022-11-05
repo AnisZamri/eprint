@@ -19,6 +19,20 @@ class SubProductsController extends Controller
         return view('staff.products.viewSubProducts',compact('subproduct','products'));
     }
 
+    
+    //cust view subproduct
+    public function SubProductsCustView(){
+
+        return view('customers.product.allCustSubProduct');
+    }
+    
+    public function CreateOrder(){
+
+        return view('staff.order.createOrder');
+    }
+    
+    
+
     public function AddSubProducts(Request $request)
     {
         $validatedData = $request->validate([
