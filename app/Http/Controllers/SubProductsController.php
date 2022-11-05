@@ -48,7 +48,7 @@ class SubProductsController extends Controller
 
     public function UpdateSubProduct(Request $request, $id){
         $update=SubProducts::find($id)->update([
-            'productsId'=>$request->productsId,
+                'productsId'=>$request->productsId,
                 'subProductSticker'=>$request->subProductSticker,
                 'subProductBanner'=>$request->subProductBanner,
                 'subProductBanting'=>$request->subProductBanting,
@@ -56,5 +56,11 @@ class SubProductsController extends Controller
         ]);
 
     }
+
+    public function DeleteSubProduct($id){
+        $delete=SubProducts::find($id)->forceDelete();
+        return Redirect()->back()->with('success','Category Succesfully Deleted');
+    }
+
 
 };

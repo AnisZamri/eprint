@@ -51,13 +51,15 @@
     @foreach($subproduct as $sub) 
   <tr> 
       <td>{{$sub->id}}</td> 
-      <td>{{$sub->productsId}}</td> 
+      <td>{{$sub['product']['productName']}}</td> 
       <td>{{$sub->subProductSticker}}</td> 
       <td>{{$sub->subProductBanner}}</td> 
       <td>{{$sub->subProductBanting}}</td> 
       <td> 
 
         <a href="{{url('sub/edit/'.$sub->id)}}"class="btn btn-info">Edit</a> 
+        <a href="{{url('sub/delete/'.$sub->id)}}"class="btn btn-danger">Delete</a> 
+
 
  
       </td> 

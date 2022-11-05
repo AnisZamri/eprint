@@ -63,7 +63,7 @@ Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProduct'])->n
 Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'])->name('updateSubProduct');
 
 // //Delete SubProduct Controller
-// Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSub']);
+Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
 
 
 

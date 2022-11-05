@@ -16,4 +16,8 @@ class SubProducts extends Model
     'subProductBanner',
     'subProductBanting',
     ];
+
+    public function product(){
+        return $this->belongsTo(Products::class,'productsId','id');
+    }
 }

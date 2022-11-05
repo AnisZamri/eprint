@@ -40,7 +40,7 @@
                       <option value="" selected="" disabled="">Select Product</option>
                       
                       @foreach($products as $products)
-                      <option style="color: black" value="{{$products->id}}" {{$products->productType}}</option>
+                      <option style="color: black" value="{{$products->id}}" {{$products->productName}}</option>
                       @endforeach
             </select>
           </div>    
