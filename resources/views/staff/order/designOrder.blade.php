@@ -30,71 +30,42 @@ body {
   <div class="card">
     <!-- Start Card Body -->
 
-    <div class="card-header">1. Choose Your Options </div> 
+    <div class="card-header">3. Select our design package </div> 
 
     <div class="card-body">
       <!-- Start Form -->
       <form id="bookingForm" action="#" method="" class="needs-validation" novalidate autocomplete="off">
        
-      
-      <!-- Start Input Name -->
+      <!-- Start Check Room Type -->
       <div class="form-group">
-          <label for="inputName">Format</label>
-          <select class="form-select" aria-label="Default select example">        
 
-                      <option selected>2x2 cm</option>
-                      <option value="1">3x3 cm</option>
-                      <option value="2">4x4 cm</option>
-                      <option value="3">5x5 cm</option>
-                      <option value="3">Others</option>
+<div class="form-check form-check-inline">
+  <input type="radio" class="form-check-input" id="inlineRadioType1" name="roomType" value="type1" required />
+  <img src="{{asset('frontend/assets/img/designbasic.png')}}" alt="John" style="width:47%">
+</div>
 
-                    </select>   
-         </div>
-        <!-- End Input Name -->
+<br><br>
 
-             
-      <!-- Start Input Name -->
-        <div class="form-group">
-          <label for="inputName">Material Type</label>
-          <select class="form-select" aria-label="Default select example">
-                      <option selected>Simili Sticker</option>
-                      <option value="1">Miracoat Sticker</option>
-                     
+<div class="form-check form-check-inline">
+  <input type="radio" class="form-check-input" id="inlineRadioType2" name="roomType" value="type2" required />
+  <img src="{{asset('frontend/assets/img/designstandard.png')}}" alt="John" style="width:46%">
+</div>
 
-            </select>      
-      </div>        
+<br>
+<br>
 
-        <!-- End Input Name -->
+<div class="form-check form-check-inline">
+  <input type="radio" class="form-check-input" id="inlineRadioType2" name="roomType" value="type2" required />
+  <img src="{{asset('frontend/assets/img/designpremium.png')}}" alt="John" style="width:45%">
+</div>
 
-        <!-- Start Input Email -->
-        <div class="form-group">
-          <label for="inputEmail">Finishing</label>
-          <select class="form-select" aria-label="Default select example">
-                      <option selected>None</option>
-                      <option value="1">Glossy</option>         
+</div>
+<!-- End Check Room Type -->
 
-            </select> 
-            </div>
-        <!-- End Input Email -->
-
- 
-        <!-- Start Input Telephone -->
-        <div class="form-group">
-          <label for="inputPhone">Sticker Shape</label>
-          <select class="form-select" aria-label="Default select example">
-                      <option selected>Circle</option>
-                      <option value="1">Square</option>         
-
-            </select> 
-        </div>
-
-         <!-- Start Input Remark -->
-         <div class="form-group">
-          <label for="textAreaRemark">Notes</label>
-          <textarea class="form-control" name="remark" id="textAreaRemark" rows="2" placeholder="Tell us you want more..."></textarea>
-        </div>
-        <!-- End Input Remark -->
-        <!-- End Input Telephone -->
+        <!-- Start Submit Button -->
+        <button style="float:right" class="btn btn-primary btn-block col-lg-2" type="submit">Next</button>
+        <!-- End Submit Button -->
+      </form>
 
       
         <hr />      
@@ -113,60 +84,10 @@ body {
 
 
 
-
-
-  <body class="container bg-secondary">
-
-  <!-- Start Header form -->
-  <div style=" margin-top: 50px">
-      <!-- End Header form -->
-
-  <!-- Start Card -->
-  <div class="card">
-    <!-- Start Card Body -->
-
-    <div class="card-header">2. Choose a Design Type</div> 
-
-    <div class="card-body">
-      <!-- Start Form -->
-      <form id="bookingForm" action="#" method="" class="needs-validation" novalidate autocomplete="off">
-       
-       <!-- Start Check Room Type -->
-       <div class="form-group">
-
-          <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="inlineRadioType1" name="roomType" value="type1" required />
-            <img src="{{asset('frontend/assets/img/uploaddesign.png')}}" alt="John" style="width:60%">
-          </div>
-
-
-          <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="inlineRadioType2" name="roomType" value="type2" required />
-            <img src="{{asset('frontend/assets/img/letusdesign.png')}}" alt="John" style="width:60%">
-          </div>
-          
-        </div>
-        <!-- End Check Room Type -->
       
        
 
       
-       
-
-        <hr />
-
-
-        <!-- Start Submit Button -->
-        <a style="float:right" class="btn btn-primary btn-block col-lg-2" href="{{ route('designOrder')}}" type="submit">Next</a>
-
-        <!-- End Submit Button -->
-      </form>
-      <!-- End Form -->
-    </div>
-    <!-- End Card Body -->
-  </div>
-  </div>
-
 
 
 

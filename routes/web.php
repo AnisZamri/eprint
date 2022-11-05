@@ -74,7 +74,8 @@ Route::get('/products/subproducts', [SubProductsController::class,'SubProductsCu
 /*cust create order*/
 Route::get('/products/subproducts/order', [SubProductsController::class,'CreateOrder'])->name('createOrder');
 
-
+/*cust create order*/
+Route::get('/products/subproducts/order/design', [SubProductsController::class,'DesignOrder'])->name('designOrder');
 
 
 

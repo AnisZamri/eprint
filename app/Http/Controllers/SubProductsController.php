@@ -31,6 +31,12 @@ class SubProductsController extends Controller
         return view('staff.order.createOrder');
     }
     
+       
+    public function DesignOrder(){
+
+        return view('staff.order.designOrder');
+    }
+    
     
 
     public function AddSubProducts(Request $request)
