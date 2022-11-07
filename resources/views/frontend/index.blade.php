@@ -38,8 +38,9 @@ h5 {font-family: "Open Sans"; font-size: 310%;}
           <p data-aos="fade-up" data-aos-delay="">THE CHEAPEST PRICE AND HIGH QUALITY YOU CAN GET</p>
 
 
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="">
-            <a href="#book-a-table" class="btn-book-a-table">Shop Now</a>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="">          
+
+            <a href="{{ route ('allproducts') }}" class="btn-book-a-table">Shop Now</a>
           </div>
         </div>
 

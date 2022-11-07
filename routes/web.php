@@ -45,6 +45,9 @@ Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']
 //Delete Product Controller
 Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
 
+/*cust view all product latest*/
+Route::get('/productslat', [ProductsController::class,'ViewLatestProducts'])->name('viewLatestProduct');
+
 
 
 /*********************SUB PRODUCT***************/
@@ -68,6 +71,7 @@ Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']
 /*cust view SubProduct homepage*/
 Route::get('/products/subproducts', [SubProductsController::class,'SubProductsCustView'])->name('subProductsCustView');
 
+
 /*********************ORDER**************/
 
 
@@ -78,7 +82,22 @@ Route::get('/products/subproducts/order', [SubProductsController::class,'CreateO
 Route::get('/products/subproducts/order/design', [SubProductsController::class,'DesignOrder'])->name('designOrder');
 
 
+/*staff view order*/
+Route::get('/staff/order', [SubProductsController::class,'ViewStaffOrder'])->name('viewStaffOrder');
 
+
+/*staff choose order*/
+Route::get('/chooseorder', [SubProductsController::class,'ViewOrder'])->name('viewOrder');
+
+
+/*staff delete order*/
+Route::get('/deleteOrder', [SubProductsController::class,'StaffDeleteOrder'])->name('staffDeleteOrder');
+
+/*cust add cart*/
+Route::get('/cart', [SubProductsController::class,'ViewCart'])->name('viewCart');
+
+/*cust checkout*/
+Route::get('/checkout', [SubProductsController::class,'Checkout'])->name('checkout');
 
 //Design Controller
 Route::get('/designs/all', [DesignController::class,'AllDesigns'])->name('alldesigns');

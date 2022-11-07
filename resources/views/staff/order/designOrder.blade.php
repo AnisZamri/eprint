@@ -63,7 +63,7 @@ body {
 <!-- End Check Room Type -->
 
         <!-- Start Submit Button -->
-        <button style="float:right" class="btn btn-primary btn-block col-lg-2" type="submit">Next</button>
+        <a style="float:right" class="btn btn-primary btn-block col-lg-2" href="{{ route('viewCart')}}" type="submit">Next</a>
         <!-- End Submit Button -->
       </form>
 
@@ -76,7 +76,10 @@ body {
   </div>
   </div>
 
+  </div>
+  </div>
 
+  
 
 
 

@@ -32,9 +32,12 @@
              
             </ul>
           </li>-->
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Profile</a></li>
-
+          <!-- <li><a href="{{ route ('viewLatestProduct') }}">Contact</a></li> -->
+          <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.show') }}">
+                <span>Profile</span>
+              </a>
+            </li>
 
           <li><a href="{{ route('logout') }}">Logout</a></li>
 
@@ -46,7 +49,6 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table">Order Now</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 

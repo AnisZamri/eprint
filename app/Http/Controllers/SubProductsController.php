@@ -37,6 +37,36 @@ class SubProductsController extends Controller
         return view('staff.order.designOrder');
     }
     
+    //cust view subproduct
+    public function ViewStaffOrder(){
+
+        return view('staff.order.viewStaffOrder');
+    }
+
+  
+
+     //staff delete order
+
+    public function StaffDeleteOrder(){
+        $delete=SubProducts::find()->forceDelete();
+        return Redirect()->back()->with('success','Category Succesfully Deleted');
+    }
+    
+    
+     //cust add cart
+
+     public function ViewCart(){
+        return view('staff.order.viewCart');
+    }
+    
+       //cust checkout
+
+       public function Checkout(){
+        return view('staff.order.checkout');
+    }
+    
+    
+    
     
 
     public function AddSubProducts(Request $request)

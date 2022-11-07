@@ -22,6 +22,10 @@ class ProductsController extends Controller
         return view('staff.products.allStaffProduct',compact('product'));
     } 
 
+    public function ViewLatestProducts(){ 
+        return view('staff.products.viewLatestProduct');
+    } 
+
     public function AddProducts(Request $request){
         $validatedData = $request->validate([
             'productName' => ['required', 'unique:products', 'max:255'],
