@@ -40,6 +40,17 @@
   <link href="  {{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
 
  
+    <!-- Male CSS Files -->
+    <!-- <link href="  {{asset('frontend/assets/css/bootstrapMale.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/elegant-iconsMale.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/font-awesomeMale.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/magnific-popupMale.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/nice-selectMale.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/owl.corouselMale.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/slicknavMale.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/styleMale.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/styleMale.css.map.css')}}" rel="stylesheet"> -->
+
 </head>
 
 <body>
@@ -67,7 +78,7 @@
   <!-- Template Main JS File -->
   <script src="{{asset('frontend/assets/js/main.js')}}"></script>
 
-    <!-- Template Main JS File -->
+    <!-- Asher Template Main JS File -->
     <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/jquery.countdown.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
@@ -77,6 +88,17 @@
     <script src="{{asset('frontend/assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/mixitup.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+
+    <!-- Male Template Main JS File -->
+    <!-- <script src="{{asset('frontend/assets/js/bootstrapMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.countdownMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.magnific-popupMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.nicescrollMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.slicknavMale.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery-3.3.1Male.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery-uiMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/mixitupMale.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/owl.carouselMale.min.js')}}"></script> -->
 
 
 

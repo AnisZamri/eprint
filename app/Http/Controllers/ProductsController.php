@@ -14,7 +14,7 @@ class ProductsController extends Controller
    
     public function AllCustProduct(){
         $product=Products::all();
-        return view('customers.product.allCustProduct',compact('product'));
+        return view('customers.product.productList',compact('product'));
     }
 
     public function AllStaffProduct(){ 
