@@ -28,7 +28,18 @@
   <!-- Template Main CSS File -->
   <link href="  {{asset('frontend/assets/css/main.css')}} " rel="stylesheet">
 
+  
+  <!-- Asher CSS Files -->
+  <link href="  {{asset('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/elegant-icons.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/jquery-ui.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/magnific-popup.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/owl.corousel.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/slicknav.min.css')}}" rel="stylesheet">
+  <link href="  {{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
 
+ 
 </head>
 
 <body>
@@ -55,6 +66,19 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.countdown.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery.slicknav.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/mixitup.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+
+
 
 </body>
 
