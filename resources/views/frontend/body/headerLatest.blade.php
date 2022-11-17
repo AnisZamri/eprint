@@ -48,7 +48,7 @@
                         <li><a href="{{ route('logout') }}">Logout</a></li>
 
 
-                                            <li><a href="#">Men’s</a></li>
+                                            <!-- <li><a href="#">Men’s</a></li>
                             <li class="active"><a href="./shop.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -56,7 +56,7 @@
                                     <li><a href="./shop-cart.html">Shop Cart</a></li>
                                     <li><a href="./checkout.html">Checkout</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>

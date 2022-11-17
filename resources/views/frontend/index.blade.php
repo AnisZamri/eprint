@@ -15,25 +15,18 @@ w3-grayscale-min
  <style>
 h1 {font-family: "Open Sans"; font-size: 500%;}
 h5 {font-family: "Open Sans"; font-size: 310%;}
-
-
-
-
-
 </style>
 
- <section id="hero" class="bgimg-1  hero d-flex align-items-center section-bg">
-  
-  
-    <div class="container">
-      <div class=" row justify-content-between gy-5">
+<section id="hero" class="bgimg-1  hero d-flex align-items-center section-bg" >
+      <div class="container" style="margin-top:-150px" >
+      <div class=" row justify-content-between gy-5" >
 
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
 
-        <h1 class="w3-jumbo  w3-hide-small"><b>NEW PACKAGE STICKER </b></h1><br>
-        <div class="font-size: 200%;">
-            <h5><b>4CM 530PCS <br>RM53</b></h5><br>
-         </div>
+        <h1 class="w3-jumbo  w3-hide-small" style="margin-left:-30px" ><b>NEW PACKAGE</b></h1><br>
+        <h1 class="w3-jumbo  w3-hide-small" style="margin-left:-30px"><b>STICKER </b></h1><br>
+
+            <h5  style="margin-left:-30px"><b>STARTING RM16.65</b></h5><br>
 
           <p data-aos="fade-up" data-aos-delay="">THE CHEAPEST PRICE AND HIGH QUALITY YOU CAN GET</p>
 
@@ -44,7 +37,7 @@ h5 {font-family: "Open Sans"; font-size: 310%;}
           </div>
         </div>
 
-        <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+        <div class="col-lg-6 order-1 order-lg-2 text-center text-lg-start" >
           <img src=" {{asset('frontend/assets/img/homepage.png')}}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
         </div>
       </div>
@@ -65,6 +58,8 @@ h5 {font-family: "Open Sans"; font-size: 310%;}
         <div class="tab-header text-center">
               <h3>Our Products</h3>
         </div>
+</div>
+
 
 <div class="w3-container" style="padding:-50px 16px" text-align="left" color="black">
   
