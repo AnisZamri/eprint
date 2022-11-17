@@ -33,7 +33,7 @@
 
 <body>
 
-@include('frontend.body.header')
+@include('frontend.body.headerLatest')
  
 @yield('content')
  
