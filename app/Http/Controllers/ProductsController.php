@@ -33,6 +33,11 @@ class ProductsController extends Controller
         return view('staff.products.viewLatestProduct');
     } 
 
+    public function TestAddProducts(){ 
+        return view('staff.products.staff_TestAddProduct');
+    } 
+
+
     public function AddProducts(Request $request){
         $validatedData = $request->validate([
             'productCategory' => ['required', 'unique:products', 'max:255'],
@@ -67,7 +72,7 @@ class ProductsController extends Controller
 
     public function EditProduct($id){
         $product=Products::find($id);
-        return view ('staff.products.editProduct',compact('product'));
+        return view ('staff.products.staff_EditProduct',compact('product'));
     }
 
     public function UpdateProduct(Request $request, $id){

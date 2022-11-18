@@ -28,13 +28,13 @@
 
       
       <li>
-        <a href="{{ route ('staffAddProduct') }}"">
+        <a href="{{ route ('staffAddProduct') }}">
           <i class="bi bi-circle"></i><span>Add Products</span>
         </a>
       </li>
       <li>
-        <a href="components-breadcrumbs.html">
-          <i class="bi bi-circle"></i><span>Business Card</span>
+        <a href="{{ route ('testAddProduct') }}">
+          <i class="bi bi-circle"></i><span>Test</span>
         </a>
       </li>
      

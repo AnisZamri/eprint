@@ -15,11 +15,11 @@
       <div class="row">
         <div class="">
 
-              <!-- Basic Modal -->
+              <!-- Add Modal -->
               <div style="float:right">
-              <button type="button"  style="margin-bottom:10px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
-                Add Product
-              </button>
+                <button type="button"  style="margin-bottom:10px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                  Add Product
+                </button>
               </div>
 
 
@@ -30,39 +30,41 @@
                       <h5 class="modal-title">Add Product</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
+
                     <div class="modal-body">
 
-    <form action="{{ route('addProducts')}}" method="POST" enctype="multipart/form-data">  
-        @csrf 
+                      <form action="{{ route('addProducts')}}" method="POST" enctype="multipart/form-data">  
+                          @csrf 
+                                          
+                          <div class="mb-3"> 
+                                <label for="productName" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                
+                                @error('productName') 
+                                    <span class="text-danger">{{$message}}</span> 
+                                @enderror 
+                          </div> 
                         
-        <div class="mb-3"> 
-              <label for="productName" class="form-label">Product Category</label> 
-              <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
-              
-              @error('productName') 
-                  <span class="text-danger">{{$message}}</span> 
-              @enderror 
-        </div> 
-      
-        <div class="mb-3"> 
-            <label for="productImage" class="form-label">Product Image</label> 
-            <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
-            
-            @error('productImage') 
-                <span class="text-danger">{{$message}}</span> 
-            @enderror 
-        </div> 
- 
-                            
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Add Product</button>
-        </div>
+                          <div class="mb-3"> 
+                              <label for="productImage" class="form-label">Product Image</label> 
+                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                              
+                              @error('productImage') 
+                                  <span class="text-danger">{{$message}}</span> 
+                              @enderror 
+                          </div>  
+                                              
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Add Product</button>
+                          </div>
 
-    </form> 
-
-        </div>
-      </div>
+                      </form> 
+                    </div>
+                  </div>
+                </div>
+              </div>
     </section>
 
     <div class="card">
@@ -73,36 +75,75 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-      <th scope="col">No</th> 
-      <th scope="col">Product Category</th> 
-      <th scope="col">Product Image</th> 
-      <th scope="col">Action</th> 
-
+                      <th scope="col">No</th> 
+                      <th scope="col">Product Image</th> 
+                      <th scope="col">Product Categoty</th> 
+                      <th scope="col">Action</th> 
                   </tr>
                 </thead>
-
+              
                 <tbody> 
-    @foreach($product as $product) 
-  <tr> 
-      <td>{{$product->id}}</td> 
-      <td>{{$product->productCategory}}</td> 
-      <td><img src="{{asset($product->productImage)}}" style="height:40px;"></td> 
+                    @foreach($product as $product) 
+                      <tr> 
+                        <td>{{$product->id}}</td> 
+                        <td><img src="{{asset($product->productImage)}}" style="height:40px;"></td> 
+                        <td>{{$product->productCategory}}</td> 
 
-      <td> 
-        <a href="{{url('products/edit/'.$product->id)}}"class="btn btn-info">Edit</a> 
-        <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
- 
-      </td> 
- 
- 
-    </tr> 
-    @endforeach 
+
+                        <td>        
+                          <a type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
+                          <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
+                        </td> 
+                      </tr> 
+                    @endforeach 
                 </tbody>
-
-
 
               </table>
               <!-- End Table with hoverable rows -->
+
+              <div class="modal fade" id="basicModalEdit" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Add Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+
+                    <div class="modal-body">
+
+                      <form action="{{ route('addProducts')}}" method="POST" enctype="multipart/form-data">  
+                        @csrf 
+                                          
+                          <div class="mb-3"> 
+                                <label for="productName" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productCategory}}"> 
+                                @error('productName') 
+                                    <span class="text-danger">{{$message}}</span> 
+                                @enderror 
+                          </div> 
+                        
+                          <div class="mb-3"> 
+                              <label for="productImage" class="form-label">Product Image</label> 
+                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productImage}}"> 
+                              @error('productImage') 
+                                  <span class="text-danger">{{$message}}</span> 
+                              @enderror 
+                          </div>  
+                                              
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Add Product</button>
+                          </div>
+                      </form> 
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
 
             </div>
           </div>
