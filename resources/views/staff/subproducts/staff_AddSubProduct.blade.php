@@ -105,7 +105,7 @@
 
 
            <div class="mb-3"> 
-            <label for="productName" class="form-label">Product Sticker</label> 
+            <label for="productSticker" class="form-label">Product Sticker</label> 
             <input type="text" name="subProductSticker" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
             
             @error('subProductSticker') 
@@ -114,7 +114,7 @@
            </div> 
 
            <div class="mb-3"> 
-            <label for="productName" class="form-label">Product Banner</label> 
+            <label for="productBanner" class="form-label">Product Banner</label> 
             <input type="text" name="subProductBanner" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
             
             @error('subProductBanner') 
@@ -123,7 +123,7 @@
            </div> 
 
            <div class="mb-3"> 
-            <label for="productName" class="form-label">Product Banting</label> 
+            <label for="productBanting" class="form-label">Product Banting</label> 
             <input type="text" name="subProductBanting" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
             
             @error('subProductBanting') 

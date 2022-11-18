@@ -14,7 +14,7 @@ class SubProductsController extends Controller
 {
     public function SubProductsView(){
 
-        $products=Products::orderBy('productName','ASC')->get();
+        $products=Products::orderBy('productCategory','ASC')->get();
         $subproduct=SubProducts::all();
         return view('staff.products.viewSubProducts',compact('subproduct','products'));
     }

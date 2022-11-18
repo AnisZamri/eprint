@@ -33,9 +33,7 @@ class ProductsController extends Controller
         return view('staff.products.viewLatestProduct');
     } 
 
-    public function TestAddProducts(){ 
-        return view('staff.products.staff_TestAddProduct');
-    } 
+    
 
 
     public function AddProducts(Request $request){

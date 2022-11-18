@@ -33,7 +33,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route ('testAddProduct') }}">
+        <a href="">
           <i class="bi bi-circle"></i><span>Test</span>
         </a>
       </li>
