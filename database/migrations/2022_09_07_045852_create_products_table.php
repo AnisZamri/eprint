@@ -15,11 +15,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('productName');
-            $table->string('productType');
-            $table->string('productDesc');
-            $table->string('productPrice');
+            $table->string('productCategory');
+            $table->string('productImage');
             $table->timestamps();
             $table->softDeletes();
             

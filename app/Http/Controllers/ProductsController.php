@@ -35,19 +35,27 @@ class ProductsController extends Controller
 
     public function AddProducts(Request $request){
         $validatedData = $request->validate([
-            'productName' => ['required', 'unique:products', 'max:255'],
+            'productCategory' => ['required', 'unique:products', 'max:255'],
             
         ],
         [
-            'productName.required'=>'Please Input Product Name',
+            'productCategory.required'=>'Please Input Product Category',
         ]);
 
+
+        $productImage=$request->file('productImage');
+
+        $name_gen=hexdec(uniqid());
+        $img_ext=strtolower($productImage->getClientOriginalExtension());
+        $img_name=$name_gen.'.'.$img_ext;
+        $up_location='image/products/';
+        $last_img=$up_location.$img_name;
+        $productImage->move($up_location,$img_name);
+
+
         Products::insert([
-            'user_id'=>Auth::user()->id,
-            'productName'=>$request->productName,
-            'productType'=>$request->productType,
-            'productDesc'=>$request->productDesc,
-            'productPrice'=>$request->productPrice,
+            'productCategory'=>$request->productCategory,
+            'productImage'=>$last_img,
             'created_at'=>Carbon::now()
         ]);
 

@@ -13,12 +13,16 @@
 
     <section class="section">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="">
 
               <!-- Basic Modal -->
-              <button type="button"  style="float:right" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+              <div style="float:right">
+              <button type="button"  style="margin-bottom:10px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
                 Add Product
               </button>
+              </div>
+
+
               <div class="modal fade" id="basicModal" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -28,39 +32,35 @@
                     </div>
                     <div class="modal-body">
 
-                    <form action="{{ route('addProducts')}}" method="POST">  
-                    @csrf 
-                    
-                                        
-                    <div class="mb-3"> 
-                        <label for="productName" class="form-label">Product Name</label> 
-                        <input type="text" name="productName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+    <form action="{{ route('addProducts')}}" method="POST" enctype="multipart/form-data">  
+        @csrf 
                         
-                        @error('productName') 
-                            <span class="text-danger">{{$message}}</span> 
-                        @enderror 
-                    </div> 
-                    
-                    <div class="mb-3"> 
-                        <label for="productName" class="form-label">Product Price</label> 
-                        <input type="text" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
-                        
-                        @error('productImage') 
-                            <span class="text-danger">{{$message}}</span> 
-                        @enderror 
-                    </div> 
+        <div class="mb-3"> 
+              <label for="productName" class="form-label">Product Category</label> 
+              <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+              
+              @error('productName') 
+                  <span class="text-danger">{{$message}}</span> 
+              @enderror 
+        </div> 
+      
+        <div class="mb-3"> 
+            <label for="productImage" class="form-label">Product Image</label> 
+            <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+            
+            @error('productImage') 
+                <span class="text-danger">{{$message}}</span> 
+            @enderror 
+        </div> 
+ 
+                            
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </div>
 
-                    <div class="mb-3"> 
-                        <label for="exampleInputPassword1" class="form-label">Product Image</label> 
-                        <input type="text" name="productPrice" class="form-control" id="exampleInputPassword1"> 
-                    </div> 
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add Product</button>
-                        </div>
+    </form> 
 
-                    </form> 
         </div>
       </div>
     </section>
@@ -73,30 +73,30 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Product Image</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Product Price</th>
-                    <th scope="col">Action</th>
+      <th scope="col">No</th> 
+      <th scope="col">Product Category</th> 
+      <th scope="col">Product Image</th> 
+      <th scope="col">Action</th> 
 
                   </tr>
                 </thead>
 
-                <tbody>
-                @foreach($product as $product) 
-                    
-                    <tr> 
-                      <td>{{$product->id}}</td> 
-                      <td>{{$product->productName}}</td> 
-                      <td>{{$product->productPrice}}</td> 
-                     
-                      <td> 
-                        <a href="{{url('products/edit/'.$product->id)}}"class="btn btn-info">Edit</a> 
-                        <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
-                      </td> 
-                              
-                    </tr> 
-                    @endforeach 
+                <tbody> 
+    @foreach($product as $product) 
+  <tr> 
+      <td>{{$product->id}}</td> 
+      <td>{{$product->productCategory}}</td> 
+      <td><img src="{{asset($product->productImage)}}" style="height:40px;"></td> 
+
+      <td> 
+        <a href="{{url('products/edit/'.$product->id)}}"class="btn btn-info">Edit</a> 
+        <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
+ 
+      </td> 
+ 
+ 
+    </tr> 
+    @endforeach 
                 </tbody>
 
 
