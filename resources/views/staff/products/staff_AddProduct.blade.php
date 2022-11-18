@@ -31,6 +31,7 @@
                     <form action="{{ route('addProducts')}}" method="POST">  
                     @csrf 
                     
+                                        
                     <div class="mb-3"> 
                         <label for="productName" class="form-label">Product Name</label> 
                         <input type="text" name="productName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
@@ -39,20 +40,18 @@
                             <span class="text-danger">{{$message}}</span> 
                         @enderror 
                     </div> 
+                    
+                    <div class="mb-3"> 
+                        <label for="productName" class="form-label">Product Price</label> 
+                        <input type="text" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                        
+                        @error('productImage') 
+                            <span class="text-danger">{{$message}}</span> 
+                        @enderror 
+                    </div> 
 
-                    
                     <div class="mb-3"> 
-                        <label for="exampleInputPassword1" class="form-label">Product Type</label> 
-                        <input type="text" name="productType" class="form-control" id="exampleInputPassword1"> 
-                    </div> 
-                    
-                    <div class="mb-3"> 
-                        <label for="exampleInputPassword1" class="form-label">Description</label> 
-                        <input type="text" name="productDesc" class="form-control" id="exampleInputPassword1"> 
-                    </div> 
-                    
-                    <div class="mb-3"> 
-                        <label for="exampleInputPassword1" class="form-label">Price</label> 
+                        <label for="exampleInputPassword1" class="form-label">Product Image</label> 
                         <input type="text" name="productPrice" class="form-control" id="exampleInputPassword1"> 
                     </div> 
                     
@@ -65,6 +64,48 @@
         </div>
       </div>
     </section>
+
+    <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">All Products</h5>
+
+              <!-- Table with hoverable rows -->
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Product Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+
+                <tbody>
+                @foreach($product as $product) 
+                    
+                    <tr> 
+                      <td>{{$product->id}}</td> 
+                      <td>{{$product->productName}}</td> 
+                      <td>{{$product->productPrice}}</td> 
+                     
+                      <td> 
+                        <a href="{{url('products/edit/'.$product->id)}}"class="btn btn-info">Edit</a> 
+                        <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
+                      </td> 
+                              
+                    </tr> 
+                    @endforeach 
+                </tbody>
+
+
+
+              </table>
+              <!-- End Table with hoverable rows -->
+
+            </div>
+          </div>
 
   </main><!-- End #main -->
 
