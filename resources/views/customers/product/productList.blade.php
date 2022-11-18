@@ -1,5 +1,3 @@
-@extends ('frontend.main_master')
-@include('frontend.body.headerLatest')
 
 
 <!DOCTYPE html>
@@ -242,31 +240,17 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{asset('frontend/assets/img/product/sticker.png')}}">
-                                    <ul class="product__hover">
+                                <div class="product__item__pic set-bg" data-setbg="">
                                         <a href="#"><img src="{{asset('frontend/assets/img/product/sticker.png')}}" alt=""></a>
-                                        <!-- <li><a href="#"><img src="{{asset('frontend/assets/img/product/sticker.png')}}" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="{{asset('frontend/assets/img/product/sticker.png')}}" alt=""></a></li> -->
-                                    </ul>
+                                       
                                 </div>
                                 
                                 <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
+                                    <h6>Sticker</h6>
                                     <a href="#" class="add-cart">+ Add To Cart</a>
                                     
-                                    <h5>$67.24</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
-                                    </div>
+                                    <h5>RM16.00</h5>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -274,73 +258,32 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="{{asset('frontend/assets/img/product/businesscard.png')}}">
-                                    <ul class="product__hover">
+                                <div class="product__item__pic set-bg" data-setbg="">
                                         
-                                        <a href="#"> <img src="{{asset('frontend/assets/img/product/businesscard.png')}}" alt="Jane" style="width:100%">
+                                <a href="#"><img src="{{asset('frontend/assets/img/product/businesscard.png')}}" alt=""></a>
 
-                                        <!-- <li><a href="#"><img src="{{asset('frontend/assets/img/product/businesscard.png')}}" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="{{asset('frontend/assets/img/product/businesscard.png')}}" alt=""></a></li> -->
-                                    </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Multi-pocket Chest Bag</h6>
+                                    <h6>Business Card</h6>
                                     <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$43.48</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-7">
-                                            <input type="radio" id="pc-7">
-                                        </label>
-                                        <label class="active black" for="pc-8">
-                                            <input type="radio" id="pc-8">
-                                        </label>
-                                        <label class="grey" for="pc-9">
-                                            <input type="radio" id="pc-9">
-                                        </label>
-                                    </div>
+                                 
+                                    <h5>RM43.48</h5>
+                                   
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                                    </ul>
+                                <a href="#"><img src="{{asset('frontend/assets/img/product/flyers.png')}}" alt=""></a>
+
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Diagonal Textured Cap</h6>
+                                    <h6>Flyers</h6>
                                     <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$60.9</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-10">
-                                            <input type="radio" id="pc-10">
-                                        </label>
-                                        <label class="active black" for="pc-11">
-                                            <input type="radio" id="pc-11">
-                                        </label>
-                                        <label class="grey" for="pc-12">
-                                            <input type="radio" id="pc-12">
-                                        </label>
-                                    </div>
+                                    
+                                    <h5>RM60.9</h5>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -426,27 +369,11 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Basic Flowing Scarf</h6>
+                                    <h6>flyers</h6>
                                     <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$26.28</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-22">
-                                            <input type="radio" id="pc-22">
-                                        </label>
-                                        <label class="active black" for="pc-23">
-                                            <input type="radio" id="pc-23">
-                                        </label>
-                                        <label class="grey" for="pc-24">
-                                            <input type="radio" id="pc-24">
-                                        </label>
-                                    </div>
+                                   
+                                    <h5>RM26.28</h5>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -769,7 +696,7 @@
     <script src="{{asset('frontend/assets/js/mixitupMale.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/owl.carouselMale.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/jquery.nice-select.min.js')}}"></script>
-    <script src="js/mainMale.js"></script>
+    <script src="{{asset('frontend/assets/js/mainMale.js')}}" ></script>
 </body>
 
 </html>
