@@ -273,6 +273,7 @@
   </header><!-- End Header -->
 
  @include ('staff.body.sidebar')
+ 
   @yield('staff')
 
  

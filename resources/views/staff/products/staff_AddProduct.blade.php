@@ -1,4 +1,6 @@
 @extends('staff.staffMaster')
+ 
+@section('staff')
 
 
 <body>
@@ -170,3 +172,5 @@
 </body>
 
 </html>
+
+@endsection
