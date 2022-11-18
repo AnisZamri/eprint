@@ -28,8 +28,8 @@
 
       
       <li>
-        <a href="">
-          <i class="bi bi-circle"></i><span>Test</span>
+        <a href="{{ route ('staffAddProduct') }}"">
+          <i class="bi bi-circle"></i><span>Add Products</span>
         </a>
       </li>
       <li>

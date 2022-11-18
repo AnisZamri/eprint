@@ -33,6 +33,10 @@ Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name(
 /*staff add product homepage*/
 Route::get('/staff/products/all', [ProductsController::class,'AllStaffProduct'])->name('allStaffProducts');
 
+/*staff add product homepage*/
+Route::get('/staff/products/allLatest', [ProductsController::class,'StaffAddProduct'])->name('staffAddProduct');
+
+
 //Add Product Controller
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
 
