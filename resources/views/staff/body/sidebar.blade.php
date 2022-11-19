@@ -28,13 +28,13 @@
 
       
       <li>
-        <a href="{{ route ('staffAddProduct') }}">
+        <a href="{{ route ('ViewProduct') }}">
           <i class="bi bi-circle"></i><span>Add Products</span>
         </a>
       </li>
       <li>
         <a href="">
-          <i class="bi bi-circle"></i><span>Test</span>
+          <i class="bi bi-circle"></i><span>Add Sub Products</span>
         </a>
       </li>
      

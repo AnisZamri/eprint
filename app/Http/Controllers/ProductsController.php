@@ -17,10 +17,6 @@ class ProductsController extends Controller
         return view('customers.product.productList',compact('product'));
     }
 
-    public function StaffAddProduct(){ 
-        $product=Products::all();
-        return view('staff.products.staff_AddProduct',compact('product'));
-    } 
 
     
     public function AllStaffProduct(){ 
@@ -34,6 +30,11 @@ class ProductsController extends Controller
     } 
 
     
+    // staff function
+    public function ViewProduct(){ 
+        $product=Products::all();
+        return view('staff.products.staff_AddProduct',compact('product'));
+    } 
 
 
     public function AddProducts(Request $request){

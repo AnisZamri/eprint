@@ -24,6 +24,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*STAFF*/
+
+
+//Staff Add Product 
+Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
+
+/*staff view product homepage*/
+Route::get('/staff/products/allLatest', [ProductsController::class,'ViewProduct'])->name('ViewProduct');
+
+//Edit Product Controller
+Route::get('/products/edit/{id}', [ProductsController::class,'EditProduct']);
+
+
+//Update Product Controller
+Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']);
+
+//Delete Product Controller
+Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
+
+
+
+
+
 /*staff add edit update delete*/
 
 
@@ -33,21 +56,13 @@ Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name(
 /*staff add product homepage*/
 Route::get('/staff/products/all', [ProductsController::class,'AllStaffProduct'])->name('allStaffProducts');
 
-/*staff add product homepage*/
-Route::get('/staff/products/allLatest', [ProductsController::class,'StaffAddProduct'])->name('staffAddProduct');
+
 
 
 //Add Product Controller
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
 
-//Edit Product Controller
-Route::get('/products/edit/{id}', [ProductsController::class,'EditProduct']);
 
-//Update Product Controller
-Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']);
-
-//Delete Product Controller
-Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
 
 /*cust view all product latest*/
 Route::get('/productslat', [ProductsController::class,'ViewLatestProducts'])->name('viewLatestProduct');
