@@ -12,6 +12,15 @@ use App\Http\Controllers\Controller;
 
 class SubProductsController extends Controller
 {
+
+     //cust view subproduct
+    public function ViewSubProduct(){
+
+        $products=Products::orderBy('productCategory','ASC')->get();
+        $subproduct=SubProducts::all();
+        return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
+    }
+
     public function SubProductsView(){
 
         $products=Products::orderBy('productCategory','ASC')->get();

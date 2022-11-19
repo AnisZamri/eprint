@@ -24,8 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*STAFF*/
+/*********************STAFF*************************************/
 
+/*********************MANAGE PRODUCT***************/
 
 //Staff Add Product 
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
@@ -44,10 +45,19 @@ Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']
 Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
 
 
+/*********************MANAGE SUB PRODUCT***************/
 
 
 
 /*staff add edit update delete*/
+
+
+/*staff add SubProduct homepage*/
+Route::get('/staff/sub/allLatest', [SubProductsController::class,'ViewSubProduct'])->name('ViewSubProduct');
+
+
+
+
 
 
 Route::get('/products/all', [ProductsController::class,'AllCustProduct'])->name('allproducts');
