@@ -18,10 +18,8 @@
         <div class="">
 
 
-              <!-- MODAL ADD PRODUCT -->
-
-              <!-- Add Modal -->
-              <div style="float:right">
+               <!-- Add Modal -->
+               <div style="float:right">
                 <button type="button"  style="margin-bottom:10px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
                   Add Sub Product
                 </button>
@@ -32,26 +30,36 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Add Product</h5>
+                      <h5 class="modal-title">Add Sub Product</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
 
                     <div class="modal-body">
 
-                      <form action="{{ route('addSubProducts')}}" method="POST" enctype="multipart/form-data">  
+                      <form action="{{ route('addProducts')}}" method="POST" enctype="multipart/form-data">  
                           @csrf 
                                           
                           <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Product Category</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-12 col-form-label">Product Category</label>
+                            <div class="col-sm-12">
                               <select class="form-select" aria-label="Default select example">
                                 <option selected>Select Product Category</option>
-                                    @foreach($products as $products)  
-                                    @endforeach
+                                @foreach($products as $products)  
+                                     <option value="{{$products->id}}">{{$products->productCategory}}</option>
+                                @endforeach
                               </select>
                             </div>
                           </div>
+
+                          <div class="mb-3"> 
+                                <label for="productName" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                
+                                @error('productName') 
+                                    <span class="text-danger">{{$message}}</span> 
+                                @enderror 
+                          </div> 
                         
                           <div class="mb-3"> 
                               <label for="productImage" class="form-label">Product Image</label> 
@@ -61,6 +69,16 @@
                                   <span class="text-danger">{{$message}}</span> 
                               @enderror 
                           </div>  
+                          
+                          
+                          <div class="mb-3"> 
+                                <label for="productName" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                
+                                @error('productName') 
+                                    <span class="text-danger">{{$message}}</span> 
+                                @enderror 
+                          </div> 
                                               
                           <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

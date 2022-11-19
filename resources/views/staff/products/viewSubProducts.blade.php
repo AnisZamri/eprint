@@ -89,7 +89,7 @@
            <select class="form-select" name="productsId" aria-label="Default select example">
                       <option value="" selected="" disabled="">Select Product</option>
                       
-                      @foreach($products as $products)
+                      @foreach($products as $products)  
                       <option style="color: black" value="{{$products->id}}">{{$products->subProductSticker}}</option>
                       @endforeach
             </select>
