@@ -70,6 +70,18 @@
     </section>
 
     <div class="card">
+
+            @if (session('success'))
+
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{session('success')}}</strong> 
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+                </div>
+
+            @endif
             <div class="card-body">
               <h5 class="card-title">All Products</h5>
 
@@ -79,7 +91,7 @@
                   <tr>
                       <th scope="col">No</th> 
                       <th scope="col">Product Image</th> 
-                      <th scope="col">Product Categoty</th> 
+                      <th scope="col">Product Category</th> 
                       <th scope="col">Action</th> 
                   </tr>
                 </thead>
