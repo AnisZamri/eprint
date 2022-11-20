@@ -157,7 +157,7 @@
         <td>{{$sub->subProductPrice}}</td> 
 
         <td> 
-          <a href="{{url('sub/edit/'.$sub->id)}}"class="btn btn-info">Edit</a> 
+          <a href="{{url('sub/edit/'.$sub->id)}}" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
           <a href="{{url('sub/delete/'.$sub->id)}}"class="btn btn-danger">Delete</a> 
         </td> 
       </tr> 
@@ -181,29 +181,34 @@
 
 
                     <div class="modal-body">
-
-                      <form action="" method="POST" enctype="multipart/form-data">  
+                           
+                    <form action="{{url('products/update/'.$sub->id)}}" method="POST" enctype="multipart/form-data">  
                         @csrf 
-                                          
+
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-form-label">Product Category</label>
+                            <div class="col-sm-12">
+                              <select name="productsId" class="form-select" aria-label="Default select example">
+                                <option selected>Select Product Category</option>
+                                @foreach($products as $products)  
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
+                                            
                           <div class="mb-3"> 
-                                <label for="productName" class="form-label">Product Category</label> 
-                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" "> 
-                                @error('productName') 
-                                    <span class="text-danger">{{$message}}</span> 
-                                @enderror 
-                          </div> 
-                        
-                          <div class="mb-3"> 
-                              <label for="productImage" class="form-label">Product Image</label> 
-                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                          <img src="{{asset($sub->subProductImage)}}" style="height:40px;">
+
+                              <label for="subProductImage" class="form-label">Product Image</label> 
+                              <input type="file" name="subProductImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub->subProductImage}}"> 
                               @error('productImage') 
                                   <span class="text-danger">{{$message}}</span> 
                               @enderror 
                           </div>  
-
+                        
                           <div class="mb-3"> 
                                 <label for="subProductName" class="form-label">Product Name</label> 
-                                <input type="text" name="subProductName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub->subProductName}}" > 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -211,7 +216,7 @@
                           
                           <div class="mb-3"> 
                                 <label for="subProductQuantity" class="form-label">Product Quantity</label> 
-                                <input type="text" name="subProductQuantity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductQuantity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub->subProductQuantity}}" > 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -219,7 +224,7 @@
 
                           <div class="mb-3"> 
                                 <label for="subProductDesc" class="form-label">Product Description</label> 
-                                <input type="text" name="subProductDesc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <input type="text" name="subProductDesc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub->subProductDesc}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -227,7 +232,7 @@
 
                           <div class="mb-3"> 
                                 <label for="subProductPrice" class="form-label">Product Price</label> 
-                                <input type="text" name="subProductPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <input type="text" name="subProductPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub->subProductPrice}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 

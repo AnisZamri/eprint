@@ -53,7 +53,14 @@ Route::get('/staff/sub/allLatest', [SubProductsController::class,'ViewSubProduct
 // //Add SubProduct Controller
 Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
 
+// //Edit SubProduct Controller
+Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProduct'])->name('editSubProduct');
 
+// //Update SubProduct Controller
+Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'])->name('updateSubProduct');
+
+// //Delete SubProduct Controller
+Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
 
 
 
@@ -84,15 +91,6 @@ Route::get('/productslat', [ProductsController::class,'ViewLatestProducts'])->na
 Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->name('viewSub');
 
 
-
-// //Edit SubProduct Controller
-Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProduct'])->name('editSubProduct');
-
-// //Update SubProduct Controller
-Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'])->name('updateSubProduct');
-
-// //Delete SubProduct Controller
-Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
 
 /*cust view SubProduct homepage*/
 Route::get('/products/subproducts', [SubProductsController::class,'SubProductsCustView'])->name('subProductsCustView');

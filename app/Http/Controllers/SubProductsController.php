@@ -54,14 +54,49 @@ class SubProductsController extends Controller
         return Redirect()->back()->with('success','Category Successful Inserted');
     }
 
-
-
-    public function SubProductsView(){
-
+    public function SubProductsView()
+    {
         $products=Products::orderBy('productCategory','ASC')->get();
         $subproduct=SubProducts::all();
         return view('staff.products.viewSubProducts',compact('subproduct','products'));
     }
+
+    public function EditSubProduct($id){
+        $products=Products::orderBy('productName','ASC')->get();
+        $subproduct=SubProducts::findOrFail($id);
+        return view('staff.products.editSubProduct',compact('products','subproduct'));
+    }
+
+    public function UpdateSubProduct(Request $request){
+        $subProductId = $request->id;
+
+        
+        $old_image=$request->old_image;
+
+        $subProductImage=$request->file('subProductImage');
+
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($subProductImage->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/products/';
+        $last_img = $up_location.$img_name;
+        $subProductImage->move($up_location,$img_name);
+
+        unlink($old_image);
+        SubProducts::find($id)->update([
+            'productsId'=>$request->productsId,
+            'subProductImage'=>$last_img,
+            'subProductName'=>$request->subProductName,
+            'subProductQuantity'=>$request->subProductQuantity,
+            'subProductDesc'=>$request->subProductDesc,
+            'subProductPrice'=>$request->subProductPrice,
+            'created_at'=>Carbon::now()
+        ]);
+
+       
+    }
+
+
 
     
     //cust view subproduct
@@ -115,22 +150,7 @@ class SubProductsController extends Controller
 
     
 
-    public function EditSubProduct($id){
-        $products=Products::orderBy('productName','ASC')->get();
-        $subproduct=SubProducts::findOrFail($id);
-        return view('staff.products.editSubProduct',compact('products','subproduct'));
-    }
-
-    public function UpdateSubProduct(Request $request, $id){
-        $update=SubProducts::find($id)->update([
-                'productsId'=>$request->productsId,
-                'subProductSticker'=>$request->subProductSticker,
-                'subProductBanner'=>$request->subProductBanner,
-                'subProductBanting'=>$request->subProductBanting,
-                'created_at'=>Carbon::now()
-        ]);
-
-    }
+    
 
     public function DeleteSubProduct($id){
         $delete=SubProducts::find($id)->forceDelete();
