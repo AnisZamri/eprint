@@ -13,13 +13,38 @@ use App\Http\Controllers\Controller;
 class SubProductsController extends Controller
 {
 
-     //cust view subproduct
+    //cust view subproduct
     public function ViewSubProduct(){
 
         $products=Products::orderBy('productCategory','ASC')->get();
         $subproduct=SubProducts::all();
         return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
     }
+
+    public function AddSubProducts(Request $request)
+    {
+        $validatedData = $request->validate([
+            //'productName' => ['required', 'unique:products', 'max:255'],
+            
+        ],
+        [
+            //'productName.required'=>'Please Input Product Name',
+        ]);
+
+             SubProducts::insert([
+            'productsId'=>$request->productsId,
+            'subProductImage'=>$request->subProductImage,
+            'subProductName'=>$request->subProductName,
+            'subProductQuantity'=>$request->subProductQuantity,
+            'subProductDesc'=>$request->subProductDesc,
+            'subProductPrice'=>$request->subProductPrice,
+            'created_at'=>Carbon::now()
+        ]);
+
+        return Redirect()->back()->with('success','Category Successful Inserted');
+    }
+
+
 
     public function SubProductsView(){
 
@@ -78,26 +103,7 @@ class SubProductsController extends Controller
     
     
 
-    public function AddSubProducts(Request $request)
-    {
-        $validatedData = $request->validate([
-            //'productName' => ['required', 'unique:products', 'max:255'],
-            
-        ],
-        [
-            //'productName.required'=>'Please Input Product Name',
-        ]);
-
-        SubProducts::insert([
-            'productsId'=>$request->productsId,
-            'subProductSticker'=>$request->subProductSticker,
-            'subProductBanner'=>$request->subProductBanner,
-            'subProductBanting'=>$request->subProductBanting,
-            'created_at'=>Carbon::now()
-        ]);
-
-        return Redirect()->back()->with('success','Category Successful Inserted');
-    }
+    
 
     public function EditSubProduct($id){
         $products=Products::orderBy('productName','ASC')->get();

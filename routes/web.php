@@ -47,13 +47,11 @@ Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct'])
 
 /*********************MANAGE SUB PRODUCT***************/
 
-
-
-/*staff add edit update delete*/
-
-
 /*staff add SubProduct homepage*/
 Route::get('/staff/sub/allLatest', [SubProductsController::class,'ViewSubProduct'])->name('ViewSubProduct');
+
+// //Add SubProduct Controller
+Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
 
 
 
@@ -85,8 +83,7 @@ Route::get('/productslat', [ProductsController::class,'ViewLatestProducts'])->na
 /*staff add SubProduct homepage*/
 Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->name('viewSub');
 
-// //Add SubProduct Controller
-Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
+
 
 // //Edit SubProduct Controller
 Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProduct'])->name('editSubProduct');

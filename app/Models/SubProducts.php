@@ -12,12 +12,16 @@ class SubProducts extends Model
     protected $fillable=[
     
     'productsId',
-    'subProductSticker',
-    'subProductBanner',
-    'subProductBanting',
+    'subProductImage',
+    'subProductName',
+    'subProductQuantity',
+    'subProductDesc',
+    'subProductPrice',
     ];
 
-    public function product(){
-        return $this->belongsTo(Products::class,'productsId','id');
+    public function products(){
+    	return $this->belongsTo(Products::class,'productsId','id');
     }
+    
+   
 }

@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('sub_products', function (Blueprint $table) {
             $table->id();
             $table->integer('productsId');
-            $table->string('subProductSticker');
-            $table->string('subProductBanner');
-            $table->string('subProductBanting');
+            $table->string('subProductImage');
+            $table->string('subProductName');
+            $table->string('subProductQuantity');
+            $table->string('subProductDesc');
+            $table->string('subProductPrice');
             $table->timestamps();
         });
     }
