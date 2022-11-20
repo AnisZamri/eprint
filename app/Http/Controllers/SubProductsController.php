@@ -31,9 +31,19 @@ class SubProductsController extends Controller
             //'productName.required'=>'Please Input Product Name',
         ]);
 
+        $subProductImage=$request->file('subProductImage');
+
+        $name_gen=hexdec(uniqid());
+        $img_ext=strtolower($subProductImage->getClientOriginalExtension());
+        $img_name=$name_gen.'.'.$img_ext;
+        $up_location='image/products/';
+        $last_img=$up_location.$img_name;
+        $subProductImage->move($up_location,$img_name);
+
+
              SubProducts::insert([
             'productsId'=>$request->productsId,
-            'subProductImage'=>$request->subProductImage,
+            'subProductImage'=>$last_img,
             'subProductName'=>$request->subProductName,
             'subProductQuantity'=>$request->subProductQuantity,
             'subProductDesc'=>$request->subProductDesc,

@@ -32,11 +32,11 @@ class ProductsController extends Controller
 
         $productImage=$request->file('productImage');
 
-        $name_gen=hexdec(uniqid());
-        $img_ext=strtolower($productImage->getClientOriginalExtension());
-        $img_name=$name_gen.'.'.$img_ext;
-        $up_location='image/products/';
-        $last_img=$up_location.$img_name;
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($productImage->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/products/';
+        $last_img = $up_location.$img_name;
         $productImage->move($up_location,$img_name);
 
         Products::insert([
@@ -49,21 +49,42 @@ class ProductsController extends Controller
     }
 
     public function EditProduct($id){
+      
         $product=Products::find($id);
         return view ('staff.products.staff_EditProduct',compact('product'));
     }
 
     public function UpdateProduct(Request $request, $id){
-            $update=Products::find($id)->update([
+            
+        $validatedData = $request->validate([
+            'productCategory' => 'required|max:255',
+        ],
 
-            'productName'=>$request->productName,
-            'user_id'=>Auth::user()->id,
-            'productType'=>$request->productType,
-            'productDesc'=>$request->productDesc,
-            'productPrice'=>$request->productPrice,
+        [
+            'productCategory.required'=>'Please Input Product Category',
         ]);
 
-        return Redirect()->route('allproducts')->with('success','Category Updated Successful');
+        $old_image=$request->old_image;
+
+
+        $productImage=$request->file('productImage');
+
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($productImage->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/products/';
+        $last_img = $up_location.$img_name;
+        $productImage->move($up_location,$img_name);
+
+        unlink($old_image);
+        Products::find($id)->update([
+
+            'productCategory'=>$request->productCategory,
+            'productImage'=>$last_img,
+            'created_at'=>Carbon::now()
+            ]);
+
+        return Redirect()->route('ViewProduct')->with('success','Category Updated Successful');
     }
 
     public function DeleteProduct($id){

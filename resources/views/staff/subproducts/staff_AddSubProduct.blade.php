@@ -53,8 +53,9 @@
                           </div>
                           
                           <div class="mb-3"> 
-                              <label for="subProductImage" class="form-label">Product Image</label> 
-                              <input type="text" name="subProductImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                              <label for="subProductImage" class="form-label">Sub Product Image</label> 
+                              <input type="file" name="subProductImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                              
                               @error('productImage') 
                                   <span class="text-danger">{{$message}}</span> 
                               @enderror 
@@ -149,7 +150,7 @@
       <tr> 
         <td>{{$sub->id}}</td> 
         <td>{{ $sub['products']['productCategory'] }}  </td>
-        <td>{{$sub->subProductImage}}</td> 
+        <td><img src="{{asset($sub->subProductImage)}}" style="height:40px;"></td> 
         <td>{{$sub->subProductName}}</td> 
         <td>{{$sub->subProductQuantity}}</td> 
         <td>{{$sub->subProductDesc}}</td> 

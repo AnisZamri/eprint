@@ -77,17 +77,14 @@
             @if (session('success'))
 
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>{{session('success')}}</strong> 
-
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-
+                    <strong>{{session('success')}}</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
             @endif
 
 
-          <!-- VIEW TABLE PRODUCT -->
+             <!-- VIEW TABLE PRODUCT -->
 
             <div class="card-body">
               <h5 class="card-title">All Products</h5>
@@ -112,7 +109,8 @@
 
 
                         <td>        
-                          <a type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
+
+                          <a href="{{url('products/edit/'.$product->id)}}" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
                           <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
                         </td> 
                       </tr> 
@@ -125,7 +123,59 @@
               
              
             </div>
-          </div>
+    </div>
+
+     <!-- MODAL UPDATE PRODUCT -->
+
+     <div class="modal fade" id="basicModalEdit" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Edit Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+
+                    <div class="modal-body">
+
+                      <form action="{{url('products/update/'.$product->id)}}" method="POST" enctype="multipart/form-data">  
+                        @csrf 
+
+                        <input type="hidden" name="old_image" value="{{$product->productImage}}">
+                                          
+                        <div class="mb-3"> 
+                                <label for="productName" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productCategory}}"> 
+                                
+                                @error('productName') 
+                                    <span class="text-danger">{{$message}}</span> 
+                                @enderror 
+                          </div> 
+                    
+
+                          <div class="mb-3"> 
+                          <img src="{{asset($product->productImage)}}" style="height:40px;">
+
+                              <label for="productImage" class="form-label">Product Image</label> 
+                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productImage}}"> 
+                              @error('productImage') 
+                                  <span class="text-danger">{{$message}}</span> 
+                              @enderror 
+                          </div>  
+                    
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Update</button>
+                          </div>
+                      </form> 
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
 
   </main><!-- End #main -->
 
