@@ -54,9 +54,9 @@ class SubProductsController extends Controller
     }
 
          public function EditSubProduct($id){
-        $products=Products::orderBy('productName','ASC')->get();
+        $products=Products::orderBy('productCategory')->get();
         $subproduct=SubProducts::findOrFail($id);
-        return view('staff.products.editSubProduct',compact('subproduct','products'));
+        return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
     }
 
     public function UpdateSubProduct(Request $request){

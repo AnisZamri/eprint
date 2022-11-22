@@ -146,19 +146,19 @@
   </thead> 
  
   <tbody> 
-    @foreach($subproduct as $sub) 
+    @foreach($subproduct as $subproduct) 
       <tr> 
-        <td>{{$sub->id}}</td> 
-        <td>{{ $sub['products']['productCategory'] }}  </td>
-        <td><img src="{{asset($sub->subProductImage)}}" style="height:40px;"></td> 
-        <td>{{$sub->subProductName}}</td> 
-        <td>{{$sub->subProductQuantity}}</td> 
-        <td>{{$sub->subProductDesc}}</td> 
-        <td>{{$sub->subProductPrice}}</td> 
+        <td>{{$subproduct->id}}</td> 
+        <td>{{ $subproduct['products']['productCategory'] }}  </td>
+        <td><img src="{{asset($subproduct->subProductImage)}}" style="height:40px;"></td> 
+        <td>{{$subproduct->subProductName}}</td> 
+        <td>{{$subproduct->subProductQuantity}}</td> 
+        <td>{{$subproduct->subProductDesc}}</td> 
+        <td>{{$subproduct->subProductPrice}}</td> 
 
         <td> 
-          <a href="{{url('sub/edit/'.$sub->id)}}" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
-          <a href="{{url('sub/delete/'.$sub->id)}}"class="btn btn-danger">Delete</a> 
+          <a href="{{url('sub/edit/'.$subproduct->id)}}" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
+          <a href="{{url('sub/delete/'.$subproduct->id)}}"class="btn btn-danger">Delete</a> 
         </td> 
       </tr> 
     @endforeach 
@@ -182,7 +182,7 @@
 
                     <div class="modal-body">
                            
-                    <form action="" method="POST" enctype="multipart/form-data">  
+                    <form action="{{ route('addSubProducts') }}" method="POST" enctype="multipart/form-data">  
                         @csrf 
 
                         <div class="row mb-3">
@@ -190,7 +190,9 @@
                             <div class="col-sm-12">
                               <select name="productsId" class="form-select" aria-label="Default select example">
                                 <option selected>Select Product Category</option>
-                                @foreach($products as $products)  
+                                @foreach($products as $product)  
+                                <option value="{{$products->id}}">{{$products->productCategory}}</option>
+
                                 @endforeach
                               </select>
                             </div>
@@ -199,7 +201,8 @@
                           <div class="mb-3"> 
 
                               <label for="subProductImage" class="form-label">Product Image</label> 
-                              <input type="file" name="subProductImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                              <img src="{{asset($subproduct->subProductImage)}}" style="height:40px;">
+                              <input type="file" name="subProductImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{$subproduct->subProductImage}}"> 
                               @error('productImage') 
                                   <span class="text-danger">{{$message}}</span> 
                               @enderror 
@@ -207,7 +210,7 @@
                         
                           <div class="mb-3"> 
                                 <label for="subProductName" class="form-label">Product Name</label> 
-                                <input type="text" name="subProductName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductName}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -215,7 +218,7 @@
                           
                           <div class="mb-3"> 
                                 <label for="subProductQuantity" class="form-label">Product Quantity</label> 
-                                <input type="text" name="subProductQuantity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductQuantity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductQuantity}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -223,7 +226,7 @@
 
                           <div class="mb-3"> 
                                 <label for="subProductDesc" class="form-label">Product Description</label> 
-                                <input type="text" name="subProductDesc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductDesc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductDesc}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
@@ -231,7 +234,7 @@
 
                           <div class="mb-3"> 
                                 <label for="subProductPrice" class="form-label">Product Price</label> 
-                                <input type="text" name="subProductPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <input type="text" name="subProductPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subproduct->subProductPrice}}"> 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
