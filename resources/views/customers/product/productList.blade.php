@@ -3875,16 +3875,13 @@ ol {
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
                             <div class="product__item">
+							<a href="{{ route('custViewSubProduct')}}">
                                 <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/sticker.png')}}')">
                                     <div class="label new">New</div>
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
+                                   
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Sticker</a></h6>
+                                    <h6><a href="{{url('/products/subproducts')}}">Sticker</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>

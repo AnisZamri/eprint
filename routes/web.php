@@ -102,8 +102,6 @@ Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->
 
 
 
-/*cust view SubProduct homepage*/
-Route::get('/products/subproducts', [SubProductsController::class,'SubProductsCustView'])->name('subProductsCustView');
 
 
 /*********************ORDER**************/

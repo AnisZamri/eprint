@@ -3740,7 +3740,7 @@ ol {
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">Sticker</a>
+                                            <a data-toggle="collapse" data-target="#collapseOne">Sticker </a>
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -3878,16 +3878,13 @@ ol {
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/sticker.png')}}')">
+                                <a href="{{ route('createOrder')}}">
+                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
                                     <div class="label new">New</div>
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
+                                    
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Sticker</a></h6>
+                                    <h6><a href="#">Sticker Sheet</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -3901,7 +3898,7 @@ ol {
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/businesscard.png')}}')">
+                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerdiecut.png')}}')">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
@@ -3909,7 +3906,7 @@ ol {
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Flowy striped skirt</a></h6>
+                                    <h6><a href="#">Sticker Die Cut</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -3923,7 +3920,7 @@ ol {
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/flyers.png')}}')">
+                                <div a href="{{ route('createOrder')}}" class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickercar.png')}}')">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
@@ -3931,7 +3928,7 @@ ol {
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Croc-effect bag</a></h6>
+                                    <h6><a href="#">Sticker Kiss Cut</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -3945,7 +3942,7 @@ ol {
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/rollup.png')}}')">
+                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/.png')}}')">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
