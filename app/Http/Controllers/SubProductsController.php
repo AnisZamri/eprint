@@ -13,6 +13,9 @@ use App\Http\Controllers\Controller;
 class SubProductsController extends Controller
 {
 
+    //****************************STAFF******************************** */
+
+
     public function AddSubProducts(Request $request)
     {
         $validatedData = $request->validate([
@@ -89,6 +92,15 @@ class SubProductsController extends Controller
     public function DeleteSubProduct($id){
         $delete=SubProducts::find($id)->forceDelete();
         return Redirect()->back()->with('success','Category Succesfully Deleted');
+    }
+
+    //****************************CUSTOMER******************************** */
+
+      //cust view subproduct
+      public function CustViewSubProducts()
+      {
+
+        return view('customers.subproduct.cust_viewSubProduct');
     }
 
 

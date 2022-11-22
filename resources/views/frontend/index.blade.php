@@ -1,120 +1,577 @@
 @extends ('frontend.main_master')
 @section('content')
- <!-- ======= Hero Section ======= 
 
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url(" {{asset('frontend/assets/img/header.jpeg')}}");
-  min-height: 200%;
-}
+   <!-- Categories Section Begin -->
+   <section class="categories">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12" 
+>
+                    <div class="categories__item categories__large__item set-bg" style="background-image: url('{{asset('frontend/assets/img/header.jpeg')}}');">
+                    <div class="categories__text">
+                        <h4 style="font-size:60px">New Package Sticker</h4>
+                        <p>THE CHEAPEST PRICE AND HIGH QUALITY YOU CAN GET</p>
+                        <a href="#">Shop now</a>
 
-w3-grayscale-min
--->
+                        
+                    </div>
 
- <style>
-h1 {font-family: "Open Sans"; font-size: 500%;}
-h5 {font-family: "Open Sans"; font-size: 310%;}
-</style>
-
-<section id="hero" class="bgimg-1  hero d-flex align-items-center section-bg" >
-      <div class="container" style="margin-top:-150px" >
-      <div class=" row justify-content-between gy-5" >
-
-        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-
-        <h1 class="w3-jumbo  w3-hide-small" style="margin-left:-30px" ><b>NEW PACKAGE</b></h1><br>
-        <h1 class="w3-jumbo  w3-hide-small" style="margin-left:-30px"><b>STICKER </b></h1><br>
-
-            <h5  style="margin-left:-30px"><b>STARTING RM16.65</b></h5><br>
-
-          <p data-aos="fade-up" data-aos-delay="">THE CHEAPEST PRICE AND HIGH QUALITY YOU CAN GET</p>
-
-
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="">          
-
-            <a href="{{ route ('allproducts') }}" class="btn-book-a-table">Shop Now</a>
-          </div>
+                    <div class="col "  >
+                        <img src=" {{asset('frontend/assets/img/homepage.png')}}" style="margin-left:270px; width:60%; height:60%;">
+                    </div>
+                </div>
+            </div>
+            
         </div>
-
-        <div class="col-lg-6 order-1 order-lg-2 text-center text-lg-start" >
-          <img src=" {{asset('frontend/assets/img/homepage.png')}}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
-        </div>
-      </div>
     </div>
-  </section><!-- End Hero Section -->
-
-  <main id="main">
-
-       <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu">
-      <div class="container" data-aos="fade-up">
-
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
-
-          <div class="tab-pane fade active show" id="menu-starters">
-
-        <div class="tab-header text-center">
-              <h3>Our Products</h3>
+</section>
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="section-title">
+                    <h4>New product</h4>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <ul class="filter__controls">
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".women">Women’s</li>
+                    <li data-filter=".men">Men’s</li>
+                    <li data-filter=".kid">Kid’s</li>
+                    <li data-filter=".accessories">Accessories</li>
+                    <li data-filter=".cosmetic">Cosmetics</li>
+                </ul>
+            </div>
         </div>
+        <div class="row property__gallery">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix women">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/sticker.png')}}')">
+                        <div class="label new">New</div>
+                        <ul class="product__hover">
+                            <li><a href="" style="background-image: url('{{asset('frontend/assets/img/product/sticker.png')}}')" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Sticker</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">RM59.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix men">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/businesscard.png')}}')">
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Business Card</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">RM49.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/flyers.png')}}')">
+                        <div class="label stockout">out of stock</div>
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Flyers</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 59.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/rollup.png')}}')">
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Banner</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 59.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Fit micro corduroy shirt</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 59.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
+                <div class="product__item sale">
+                    <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
+                        <div class="label sale">Sale</div>
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-6.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Tropical Kimono</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-7.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Contrasting sunglasses</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 59.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
+                <div class="product__item sale">
+                    <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
+                        <div class="label">Sale</div>
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-8.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Water resistant backpack</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product Section End -->
+
+<!-- Banner Section Begin -->
+<section class="banner set-bg" data-setbg="img/banner/banner-1.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-8 m-auto">
+                <div class="banner__slider owl-carousel">
+                    <div class="banner__item">
+                        <div class="banner__text">
+                            <span>The Chloe Collection</span>
+                            <h1>The Project Jacket</h1>
+                            <a href="#">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__text">
+                            <span>The Chloe Collection</span>
+                            <h1>The Project Jacket</h1>
+                            <a href="#">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__text">
+                            <span>The Chloe Collection</span>
+                            <h1>The Project Jacket</h1>
+                            <a href="#">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Trend Section Begin -->
+<section class="trend spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>Hot Trend</h4>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/ht-1.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Chain bucket bag</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/ht-2.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Pendant earrings</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/ht-3.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Cotton T-Shirt</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>Best seller</h4>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/bs-1.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Cotton T-Shirt</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/bs-2.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Zip-pockets pebbled tote <br />briefcase</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/bs-3.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Round leather bag</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>Feature</h4>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/f-1.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Bow wrap skirt</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/f-2.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Metallic earrings</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                    <div class="trend__item">
+                        <div class="trend__item__pic">
+                            <img src="img/trend/f-3.jpg" alt="">
+                        </div>
+                        <div class="trend__item__text">
+                            <h6>Flap cross-body bag</h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Trend Section End -->
+
+<!-- Discount Section Begin -->
+<section class="discount">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <div class="discount__pic">
+                    <img src="img/discount.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 p-0">
+                <div class="discount__text">
+                    <div class="discount__text__title">
+                        <span>Discount</span>
+                        <h2>Summer 2019</h2>
+                        <h5><span>Sale</span> 50%</h5>
+                    </div>
+                    <div class="discount__countdown" id="countdown-time">
+                        <div class="countdown__item">
+                            <span>22</span>
+                            <p>Days</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>18</span>
+                            <p>Hour</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>46</span>
+                            <p>Min</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>05</span>
+                            <p>Sec</p>
+                        </div>
+                    </div>
+                    <a href="#">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Discount Section End -->
+
+<!-- Services Section Begin -->
+<section class="services spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-car"></i>
+                    <h6>Free Shipping</h6>
+                    <p>For all oder over $99</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-money"></i>
+                    <h6>Money Back Guarantee</h6>
+                    <p>If good have Problems</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-support"></i>
+                    <h6>Online Support 24/7</h6>
+                    <p>Dedicated support</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-headphones"></i>
+                    <h6>Payment Secure</h6>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+
+<!-- Instagram Begin -->
+<div class="instagram">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg">
+                    <div class="instagram__text">
+                        <i class="fa fa-instagram"></i>
+                        <a href="#">@ ashion_shop</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-<div class="w3-container" style="padding:-50px 16px" text-align="left" color="black">
-  
-  <div class="w3-row-padding " style="margin-top:64px">
-
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-      <a href="#">
-        <img src="{{asset('frontend/assets/img/product/sticker.png')}}" alt="John" style="width:100%">
-        <div class="w3-container">
-          <h4><b>Sticker</b></h4>
-          <p class="w3-opacity">STARTING AT</p>
-          <p>RM15.96</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-      <a href="#">
-      <img src="{{asset('frontend/assets/img/product/businesscard.png')}}" alt="Jane" style="width:100%">
-        <div class="w3-container">
-        <h4><b>Business Card</b></h4>
-          <p class="w3-opacity">STARTING AT</p>
-          <p>RM15.96</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-      <a href="#">
-  <img src="{{asset('frontend/assets/img/product/flyers.png')}}" alt="Mike" style="width:100%">
-        <div class="w3-container">
-          <h4><b>Flyers</b></h4>
-          <p class="w3-opacity">STARTING AT</p>
-          <p>RM16</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-      <a href="#">
-<img src="{{asset('frontend/assets/img/product/rollup.png')}}" alt="Dan" style="width:100%">
-        <div class="w3-container">
-          <h4><b>Banting</b></h4>
-          <p class="w3-opacity">STARTING AT</p>
-          <p>RM16</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-   
-
-  </main><!-- End #main -->
+<!-- Instagram End -->
 @endsection
