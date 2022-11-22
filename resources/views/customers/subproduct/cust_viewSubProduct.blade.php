@@ -3699,6 +3699,23 @@ ol {
 		width: 100%;
 		font-size: 24px;
 	}
+
+    .product_popup .popContent .box .column {
+    float: left;
+    width: 272px;
+    padding: 32px 15px 32px 15px;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px 0 rgb(224 224 224 / 50%);
+    background: #FFF;
+    position: relative;
+    border: 1px solid #FFF;
+}
+
+.product_popup .popContent .box .column {
+    margin: 0 19px 57px 19px;
+}
+
+
 }
 	</style>
 </head>
@@ -3878,8 +3895,8 @@ ol {
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
                             <div class="product__item">
-                                <a href="{{ route('createOrder')}}">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
+                            <a data-target="#exampleModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#exampleModal">
+                                                               <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
                                     <div class="label new">New</div>
                                     
                                 </div>
@@ -4090,6 +4107,8 @@ ol {
     </section>
     <!-- Shop Section End -->
 
+    
+
     <!-- Instagram Begin -->
     <div class="instagram">
         <div class="container-fluid">
@@ -4146,6 +4165,47 @@ ol {
         </div>
     </div>
     <!-- Instagram End -->
+
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select Option Below to Check Price</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="box">
+        <div class="box_option">
+            <div class="upload_file column">
+                <div class="img"></div><div class="product_popup--block">
+                    <h3>Upload Your Design</h3>
+                    <p>Click here to select your product options and to upload your print-ready artwork.</p>
+                </div>
+            </div>
+
+            <div class="design_service column">
+                <div class="img"></div><div class="product_popup--block">
+                    <h3>Let Us Design</h3>
+                    <p>No print ready artwork file yet?<br> Let our skilled designers do the work for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Footer Section Begin -->
     <footer class="footer">
