@@ -13,14 +13,6 @@ use App\Http\Controllers\Controller;
 class SubProductsController extends Controller
 {
 
-    //cust view subproduct
-    public function ViewSubProduct(){
-
-        $products=Products::orderBy('productCategory','ASC')->get();
-        $subproduct=SubProducts::all();
-        return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
-    }
-
     public function AddSubProducts(Request $request)
     {
         $validatedData = $request->validate([
@@ -54,17 +46,17 @@ class SubProductsController extends Controller
         return Redirect()->back()->with('success','Category Successful Inserted');
     }
 
-    public function SubProductsView()
-    {
+       public function ViewSubProduct(){
+
         $products=Products::orderBy('productCategory','ASC')->get();
         $subproduct=SubProducts::all();
-        return view('staff.products.viewSubProducts',compact('subproduct','products'));
+        return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
     }
 
-    public function EditSubProduct($id){
+         public function EditSubProduct($id){
         $products=Products::orderBy('productName','ASC')->get();
         $subproduct=SubProducts::findOrFail($id);
-        return view('staff.products.editSubProduct',compact('products','subproduct'));
+        return view('staff.products.editSubProduct',compact('subproduct','products'));
     }
 
     public function UpdateSubProduct(Request $request){
@@ -92,10 +84,12 @@ class SubProductsController extends Controller
             'subProductPrice'=>$request->subProductPrice,
             'created_at'=>Carbon::now()
         ]);
+    }   
 
-       
+    public function DeleteSubProduct($id){
+        $delete=SubProducts::find($id)->forceDelete();
+        return Redirect()->back()->with('success','Category Succesfully Deleted');
     }
-
 
 
     
@@ -152,10 +146,6 @@ class SubProductsController extends Controller
 
     
 
-    public function DeleteSubProduct($id){
-        $delete=SubProducts::find($id)->forceDelete();
-        return Redirect()->back()->with('success','Category Succesfully Deleted');
-    }
 
 
 };
