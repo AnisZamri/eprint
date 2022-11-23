@@ -10,9 +10,13 @@
     <meta name="keywords" content="Ashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ashion | Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+	<title>E-PRINT</title>
 
-   
 
    
 	
@@ -3715,6 +3719,13 @@ ol {
     margin: 0 19px 57px 19px;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 }
 	</style>
@@ -4170,38 +4181,59 @@ ol {
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Select Option Below to Check Price</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="box">
-        <div class="box_option">
-            <div class="upload_file column">
-                <div class="img"></div><div class="product_popup--block">
-                    <h3>Upload Your Design</h3>
-                    <p>Click here to select your product options and to upload your print-ready artwork.</p>
-                </div>
-            </div>
+      
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Select Option Below to Check Price</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+     	</div>
 
-            <div class="design_service column">
-                <div class="img"></div><div class="product_popup--block">
-                    <h3>Let Us Design</h3>
-                    <p>No print ready artwork file yet?<br> Let our skilled designers do the work for you.</p>
-                </div>
-            </div>
-        </div>
+      	<div class="modal-body">
+
+		  <div class="row">
+  <div class="col-sm-6">
+  <a href="">
+
+    <div class="card">
+      <div class="card-body">
+		<img src="{{asset('frontend/assets/img/upload.png')}}" alt="" style="width:90px; margin-left:110px" class="text-center " >
+        <h5 class="card-title text-center mt-2">Upload Your Design</h5>
+
+        <p class="card-text text-center" >Click here to select your product options and to upload your print-ready artwork.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="col-sm-6">
+  <a href="">
+
+    <div class="card">
+      <div class="card-body">
+	  <img src="{{asset('frontend/assets/img/web-design.png')}}" alt="" style="width:90px; margin-left:120px" class="center" >
+
+	  <h5 class="card-title text-center mt-2">Let Us Design</h5>
+
+<p class="card-text text-center" >No print ready artwork file yet? Let our skilled designers do the work for you.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    </div>
+  </div>
+</div>
+	
+  </div>
+
+  
+</div>
+			</div>
+	  	</div>
+
+	</div>
+  </div>
+</div>
+      
     </div>
   </div>
 </div>
