@@ -70,7 +70,8 @@ Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']
 /*cust view SubProduct */
 Route::get('/products/subproductss', [SubProductsController::class,'CustViewSubProducts'])->name('custViewSubProduct');
 
-
+/*cust view SubProduct */
+Route::get('/products/subproductsDetails', [SubProductsController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
 
 
 
