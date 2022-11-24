@@ -3740,12 +3740,12 @@ ol {
 							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
 							@endphp
 
-							
+							@foreach($products as $product)
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">ss</a>
+                                            <a data-toggle="collapse" data-target="#collapseOne">{{$product->productCategory}}</a>
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -3758,77 +3758,13 @@ ol {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseTwo">Banner</a>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseThree">Flyers</a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFour">Accessories</a>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
+                                    
+                                    
                                 </div>
                             </div>
 
+							@endforeach
 
                         </div>
 

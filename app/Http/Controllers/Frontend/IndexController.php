@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Products;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function index(){
-        return view('frontend.index');
+    public function index($id){
+        $products = Products::orderBy('productCategory','ASC')->get();
+        
+        return view('frontend.index',compact('products'));
     }
 }
