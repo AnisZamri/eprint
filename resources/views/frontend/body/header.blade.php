@@ -35,7 +35,7 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{ route ('allproducts') }}">Home</a></li>
+                            <li class="active"><a href="{{ url('/dashboard') }}">Home</a></li>
                             <li><a href="{{ route ('allproducts') }}">Products</a></li>
                             <li><a href="{{ route ('custViewSubProduct') }}">Sub Products</a></li>
                             <li><a href="#">Pages</a>

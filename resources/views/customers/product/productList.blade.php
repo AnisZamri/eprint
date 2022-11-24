@@ -3733,11 +3733,19 @@ ol {
                             <div class="section-title">
                                 <h4>Categories</h4>
                             </div>
+
+    <!-- Get Product CAtegory -->
+
+							@php
+							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
+							@endphp
+
+							
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">Sticker</a>
+                                            <a data-toggle="collapse" data-target="#collapseOne">ss</a>
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -3820,7 +3828,10 @@ ol {
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
+
                        
                         <div class="sidebar__color">
                             <div class="section-title">
