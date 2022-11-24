@@ -3907,7 +3907,7 @@ ol {
                         <div class="col-lg-4 col-md-1">
                             <div class="product__item">
                             <a data-target="#exampleModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#exampleModal">
-                                                               <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
+                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
                                     <div class="label new">New</div>
                                     
                                 </div>
@@ -4196,7 +4196,7 @@ ol {
 
 		  <div class="row">
   <div class="col-sm-6">
-  <a href="">
+  <a href="{{ route('custViewSubProductDetails')}}"">
 
     <div class="card">
       <div class="card-body">
