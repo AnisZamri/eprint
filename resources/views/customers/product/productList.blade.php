@@ -3740,31 +3740,35 @@ ol {
 							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
 							@endphp
 
-							@foreach($products as $product)
-                            <div class="categories__accordion">
-                                <div class="accordion" id="accordionExample">
-                                    <div class="card">
-                                        <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">{{$product->productCategory}}</a>
-                                        </div>
-                                        <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Sticker Sheet</a></li>
-                                                    <li><a href="#">Sticker Die Cut</a></li>
-                                                    <li><a href="#">Sticker Kiss Cut</a></li>
-                                                   
-                                                </ul>
+							@foreach($products as $products)
+                                <div class="categories__accordion">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-heading active">
+                                                <a data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
                                             </div>
+
+                                            @php
+                                                $subproduct = App\Models\SubProducts::where('productsId','$products->id')->orderBy('subProductName','ASC')->get();
+
+                                            @endphp 
+                                            
+                                            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    @foreach($subproduct as $subproduct)
+                                                        <ul>
+                                                            <li><a href="#">{{$subproduct['products']['productCategory']->subProductName}}</a></li>
+                                                        </ul>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+
+                                        
+											
                                         </div>
                                     </div>
-                                  
-                                    
-                                    
                                 </div>
-                            </div>
-
-							@endforeach
+                            @endforeach
 
                         </div>
 
@@ -3821,24 +3825,35 @@ ol {
                 <div class="col-lg-9 col-md-2">
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
+						@php
+									$products = App\Models\Products::orderBy('productCategory','ASC')->get();
+									@endphp
+
+							
+							@foreach($products as $product)
                             <div class="product__item">
-							<a href="{{ route('custViewSubProduct')}}">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/sticker.png')}}')">
-                                    <div class="label new">New</div>
-                                   
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="{{url('/products/subproducts')}}">Sticker</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+								<a href="{{ route('custViewSubProduct')}}">
+									<div class="product__item__pic set-bg">
+									<img src="{{asset($product->productImage)}}">
+									<div class="label new">New</div>
+									</div>
+
+								<div class="product__item__text">
+                                    <h6><a href="{{url('/products/subproducts')}}">{{$product->productCategory}}</a></h6>
+										<div class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+
                                     <div class="product__price">$ 59.0</div>
                                 </div>
+
                             </div>
+
+							@endforeach
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">

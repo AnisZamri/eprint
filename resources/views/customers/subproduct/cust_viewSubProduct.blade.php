@@ -3905,24 +3905,35 @@ ol {
                 <div class="col-lg-9 col-md-2">
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
+						@php
+									$subproducts = App\Models\SubProducts::orderBy('subProductName','ASC')->get();
+									@endphp
+
+							
+							@foreach($subproducts as $subproduct)
                             <div class="product__item">
-                            <a data-target="#exampleModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#exampleModal">
-                                <div class="product__item__pic set-bg" style="background-image: url('{{asset('frontend/assets/img/product/stickerbiasa.png')}}')">
-                                    <div class="label new">New</div>
-                                    
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Sticker Sheet</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+								<a href="{{ route('custViewSubProduct')}}">
+									<div class="product__item__pic set-bg">
+									<img src="{{asset($subproduct->subProductImage)}}">
+									<div class="label new">New</div>
+									</div>
+
+								<div class="product__item__text">
+                                    <h6><a href="{{url('/products/subproducts')}}">{{$subproduct->subProductName}}</a></h6>
+										<div class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+
                                     <div class="product__price">$ 59.0</div>
                                 </div>
+
                             </div>
+
+							@endforeach
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">

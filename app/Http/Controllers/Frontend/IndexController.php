@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     public function index(){
-        $products = Products::orderBy('productCategory','ASC')->get();
+        $products = Products::orderBy('id','ASC')->get();
         $subproduct=SubProducts::all();
   
         return view('frontend.index',compact('subproduct','products'));
