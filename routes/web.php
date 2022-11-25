@@ -161,7 +161,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         //$users=User::all();
 
-       // return view('staff.index');
+       // return view('cust.index');
          return view('frontend.index');
         
     });

@@ -3744,24 +3744,24 @@ ol {
 							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
 							@endphp
 
-							@foreach($products as $product)
+							@foreach($products as $products)
                                 <div class="categories__accordion">
                                     <div class="accordion" id="accordionExample">
                                         <div class="card">
                                             <div class="card-heading active">
-                                                <a data-toggle="collapse" data-target="#collapseOne">{{$product->productCategory}}</a>
+                                                <a data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
                                             </div>
 
                                             @php
-                                                $subproducts = App\Models\SubProducts::orderBy('subProductName','ASC')->get();
+                                                $subproduct = App\Models\SubProducts::where('productsId','$products->id')->orderBy('subProductName','ASC')->get();
 
                                             @endphp 
                                             
                                             <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    @foreach($subproducts as $subproduct)
+                                                    @foreach($subproduct as $subproduct)
                                                         <ul>
-                                                            <li><a href="#">{{$subproduct->subProductName}}</a></li>
+                                                            <li><a href="#">{{$subproduct['products']['productCategory']->subProductName}}</a></li>
                                                         </ul>
                                                     @endforeach
                                                 </div>
