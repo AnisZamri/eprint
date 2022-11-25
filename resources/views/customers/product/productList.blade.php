@@ -3745,7 +3745,7 @@ ol {
                                     <div class="accordion" id="accordionExample">
                                         <div class="card">
                                             <div class="card-heading active">
-                                                <a data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
+                                                <a href="#product{{$products->id}}" data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
                                             </div>
 
                                             @php
@@ -3780,7 +3780,6 @@ ol {
                             <div class="size__list color__list">
                                 <label for="black">
                                     Blacks
-                                    <input type="checkbox" id="black">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="whites">
@@ -3834,21 +3833,15 @@ ol {
                             <div class="product__item">
 								<a href="{{ route('custViewSubProduct')}}">
 									<div class="product__item__pic set-bg">
-									<img src="{{asset($product->productImage)}}">
-									<div class="label new">New</div>
+										<img src="{{asset($product->productImage)}}">
+										<div class="label new">New</div>
 									</div>
 
 								<div class="product__item__text">
-                                    <h6><a href="{{url('/products/subproducts')}}">{{$product->productCategory}}</a></h6>
-										<div class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
+                                    <h6><a href="#product{{$product->id}}">{{$product->productCategory}}</a></h6>
+									
 
-                                    <div class="product__price">$ 59.0</div>
+                                    <div class="product__price"></div>
                                 </div>
 
                             </div>

@@ -3764,94 +3764,41 @@ ol {
                             <div class="section-title">
                                 <h4>Categories</h4>
                             </div>
-                            <div class="categories__accordion">
-                                <div class="accordion" id="accordionExample">
-                                    <div class="card">
-                                        <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">Sticker </a>
-                                        </div>
-                                        <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Sticker Sheet</a></li>
-                                                    <li><a href="#">Sticker Die Cut</a></li>
-                                                    <li><a href="#">Sticker Kiss Cut</a></li>
-                                                   
-                                                </ul>
+                            @php
+							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
+							@endphp
+
+							@foreach($products as $products)
+                                <div class="categories__accordion">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-heading active">
+                                                <a data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseTwo">Banner</a>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
+
+                                            @php
+                                                $subproduct = App\Models\SubProducts::where('productsId','$products->id')->orderBy('subProductName','ASC')->get();
+
+                                            @endphp 
+                                            
+                                            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    @foreach($subproduct as $subproduct)
+                                                        <ul>
+                                                            <li><a href="#">{{$subproduct['products']['productCategory']->subProductName}}</a></li>
+                                                        </ul>
+                                                    @endforeach
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseThree">Flyers</a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFour">Accessories</a>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
+
+                                        
+											
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            @endforeach
+							</div>
+
                        
                         <div class="sidebar__color">
                             <div class="section-title">
@@ -3902,12 +3849,16 @@ ol {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-2">
+
+				@foreach($products as $products)
+               	 <div class="col-lg-9 col-md-2" id="product{{$products->id}}">
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
+						
+						
 						@php
-									$subproducts = App\Models\SubProducts::orderBy('subProductName','ASC')->get();
-									@endphp
+							$subproducts = App\Models\SubProducts::where('productsId',$products->id)->orderBy('id','DESC')->get();
+						@endphp
 
 							
 							@foreach($subproducts as $subproduct)
@@ -4123,7 +4074,7 @@ ol {
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach</div>
             </div>
         </div>
     </section>
