@@ -3851,7 +3851,7 @@ ol {
                 </div>
 
 				@foreach($products as $products)
-               	 <div class="col-lg-9 col-md-2" id="product{{$products->id}}">
+               	 <div class="col-lg-9 col-md-2" id="products{{$products->id}}">
                     <div class="row">
                         <div class="col-lg-4 col-md-1">
 						

@@ -15,8 +15,8 @@ class ProductsController extends Controller
     
     // **********************************staff function***************************************
     public function ViewProduct(){ 
-        $product=Products::all();
-        return view('staff.products.staff_AddProduct',compact('product'));
+        $products=Products::all();
+        return view('staff.products.staff_AddProduct',compact('products'));
     } 
 
 
@@ -49,9 +49,9 @@ class ProductsController extends Controller
     }
 
     public function EditProduct($id){
-      
-        $product=Products::find($id);
-        return view ('staff.products.staff_EditProduct',compact('product'));
+        $products=Products::findOrFail($id);
+
+       return view('staff.products.edit',compact('products'));
     }
 
     public function UpdateProduct(Request $request, $id){

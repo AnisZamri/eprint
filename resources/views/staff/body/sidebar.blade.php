@@ -15,18 +15,7 @@
       <i class="bi bi-menu-button-wide"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-      <li>
-        <a href="{{ route ('allStaffProducts') }}">
-          <i class="bi bi-circle"></i><span>All Products</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ route ('viewSub') }}">
-          <i class="bi bi-circle"></i><span>Sub Products</span>
-        </a>
-      </li>
-
-      
+          
       <li>
         <a href="{{ route ('ViewProduct') }}">
           <i class="bi bi-circle"></i><span>Add Products</span>

@@ -101,17 +101,16 @@
                 </thead>
               
                 <tbody> 
-                    @foreach($product as $product) 
+                    @foreach($products as $products) 
                       <tr> 
-                        <td>{{$product->id}}</td> 
-                        <td><img src="{{asset($product->productImage)}}" style="height:40px;"></td> 
-                        <td>{{$product->productCategory}}</td> 
+                        <td>{{$products->id}}</td> 
+                        <td><img src="{{asset($products->productImage)}}" style="height:40px;"></td> 
+                        <td>{{$products->productCategory}}</td> 
 
 
                         <td>        
-
-                          <a href="{{url('products/edit/'.$product->id)}}" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#basicModalEdit">Edit</a>
-                          <a href="{{url('products/delete/'.$product->id)}}"class="btn btn-danger">Delete</a> 
+                        <a href=" {{ route('editProduct', $products->id ) }}"class="btn btn-primary">Edit</a> 
+                          <a href="{{url('products/delete/'.$products->id)}}"class="btn btn-danger">Delete</a> 
                         </td> 
                       </tr> 
                     @endforeach 
@@ -124,6 +123,8 @@
              
             </div>
     </div>
+
+    
 
      <!-- MODAL UPDATE PRODUCT -->
 
@@ -138,26 +139,23 @@
 
                     <div class="modal-body">
 
-                      <form action="{{url('products/update/'.$product->id)}}" method="POST" enctype="multipart/form-data">  
+                      <form action="{{url('products/update/'.$products->id)}}" method="POST" enctype="multipart/form-data">  
                         @csrf 
-
-                        <input type="hidden" name="old_image" value="{{$product->productImage}}">
                                           
                         <div class="mb-3"> 
-                                <label for="productName" class="form-label">Product Category</label> 
-                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productCategory}}"> 
+                                <label for="productCategory" class="form-label">Product Category</label> 
+                                <input type="text" name="productCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$products->productCategory}}"> 
                                 
-                                @error('productName') 
+                                @error('productCategory') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 
                           </div> 
                     
-
                           <div class="mb-3"> 
-                          <img src="{{asset($product->productImage)}}" style="height:40px;">
+                          <img src="{{asset($products->productImage)}}" style="height:40px;">
 
                               <label for="productImage" class="form-label">Product Image</label> 
-                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->productImage}}"> 
+                              <input type="file" name="productImage" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$products->productImage}}"> 
                               @error('productImage') 
                                   <span class="text-danger">{{$message}}</span> 
                               @enderror 

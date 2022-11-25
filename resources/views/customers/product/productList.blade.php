@@ -3757,7 +3757,7 @@ ol {
                                                 <div class="card-body">
                                                     @foreach($subproduct as $subproduct)
                                                         <ul>
-                                                            <li><a href="#">{{$subproduct['products']['productCategory']->subProductName}}</a></li>
+                                                            <li><a href="#"></a></li>
                                                         </ul>
                                                     @endforeach
                                                 </div>
@@ -3829,16 +3829,16 @@ ol {
 									@endphp
 
 							
-							@foreach($products as $product)
+							@foreach($products as $products)
                             <div class="product__item">
 								<a href="{{ route('custViewSubProduct')}}">
 									<div class="product__item__pic set-bg">
-										<img src="{{asset($product->productImage)}}">
+										<img src="{{asset($products->productImage)}}">
 										<div class="label new">New</div>
 									</div>
 
 								<div class="product__item__text">
-                                    <h6><a href="#product{{$product->id}}">{{$product->productCategory}}</a></h6>
+                                    <h6><a href="#products{{$products->id}}">{{$products->productCategory}}</a></h6>
 									
 
                                     <div class="product__price"></div>

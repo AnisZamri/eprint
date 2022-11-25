@@ -149,7 +149,6 @@
     @foreach($subproduct as $subproduct) 
       <tr> 
         <td>{{$subproduct->id}}</td> 
-        <td>{{ $subproduct['products']['productCategory'] }}  </td>
         <td><img src="{{asset($subproduct->subProductImage)}}" style="height:40px;"></td> 
         <td>{{$subproduct->subProductName}}</td> 
         <td>{{$subproduct->subProductQuantity}}</td> 
