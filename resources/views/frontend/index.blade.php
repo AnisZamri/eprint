@@ -3837,9 +3837,7 @@ ol {
 					@foreach($products as $product)
 
                         <div class="col-lg-4 col-md-1">
-									
-							
-                            <div class="product__item">
+							<div class="product__item">
 								<a href="{{ route('custViewSubProduct')}}">
 									<div class="product__item__pic set-bg">
 									<img src="{{asset($product->productImage)}}">
@@ -3855,15 +3853,11 @@ ol {
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 										</div>
-
                                     <div class="product__price">$ 59.0</div>
                                 </div>
-
                             </div>
-
-
                         </div>
-						@endforeach
+					@endforeach
 
 
                         

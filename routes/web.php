@@ -38,20 +38,15 @@ Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct'])
 
 /*********************MANAGE SUB PRODUCT***************/
 
-/*staff add SubProduct homepage*/
 Route::get('/staff/sub/allLatest', [SubProductsController::class,'ViewSubProduct'])->name('ViewSubProduct');
-
-// //Add SubProduct Controller
 Route::post('/sub/add', [SubProductsController::class,'AddSubProducts'])->name('addSubProducts');
-
-// //Edit SubProduct Controller
 Route::get('/sub/edit/{id}', [SubProductsController::class,'EditSubProduct'])->name('editSubProduct');
-
-// //Update SubProduct Controller
 Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'])->name('updateSubProduct');
-
-// //Delete SubProduct Controller
 Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
+
+
+
+
 
 
 /*********************CUSTOMERS*************************************/

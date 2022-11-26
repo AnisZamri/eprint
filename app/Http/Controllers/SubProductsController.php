@@ -59,12 +59,10 @@ class SubProductsController extends Controller
          public function EditSubProduct($id){
         $products=Products::orderBy('productCategory')->get();
         $subproduct=SubProducts::findOrFail($id);
-        return view('staff.subproducts.staff_AddSubProduct',compact('subproduct','products'));
+        return view('staff.subproducts.staff_EditSubProduct',compact('subproduct','products'));
     }
 
-    public function UpdateSubProduct(Request $request){
-        $subProductId = $request->id;
-
+    public function UpdateSubProduct(Request $request,$id){
         
         $old_image=$request->old_image;
 
@@ -87,6 +85,9 @@ class SubProductsController extends Controller
             'subProductPrice'=>$request->subProductPrice,
             'created_at'=>Carbon::now()
         ]);
+
+        return Redirect()->route('ViewSubProduct')->with('success','Category Updated Successful');
+
     }   
 
     public function DeleteSubProduct($id){
