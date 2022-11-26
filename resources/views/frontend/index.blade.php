@@ -3740,7 +3740,7 @@ ol {
 
     <!-- Get Product CAtegory -->
 
-							@php
+	@php
 							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
 							@endphp
 
@@ -3749,7 +3749,7 @@ ol {
                                     <div class="accordion" id="accordionExample">
                                         <div class="card">
                                             <div class="card-heading active">
-                                                <a data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
+                                                <a href="#product{{$products->id}}" data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
                                             </div>
 
                                             @php
@@ -3761,7 +3761,7 @@ ol {
                                                 <div class="card-body">
                                                     @foreach($subproduct as $subproduct)
                                                         <ul>
-                                                            <li><a href="#">{{$subproduct['products']['productCategory']->subProductName}}</a></li>
+                                                            <li><a href="#"></a></li>
                                                         </ul>
                                                     @endforeach
                                                 </div>
