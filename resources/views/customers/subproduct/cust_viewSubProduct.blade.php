@@ -3857,7 +3857,8 @@ ol {
 						
 						
 						@php
-							$subproducts = App\Models\SubProducts::where('productsId',$products->id)->orderBy('id','DESC')->get();
+						$subproduct = App\Models\SubProducts::where('subProductName','ASC')->get();
+
 						@endphp
 
 							
