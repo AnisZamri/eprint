@@ -3740,7 +3740,7 @@ ol {
 
     <!-- Get Product CAtegory -->
 
-	@php
+							@php
 							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
 							@endphp
 
