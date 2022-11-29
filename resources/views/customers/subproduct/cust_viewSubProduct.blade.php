@@ -3857,12 +3857,12 @@ ol {
 						
 						
 						@php
-						$subproduct = App\Models\SubProducts::where('subProductName','ASC')->get();
+						$catwiseProduct = App\Models\SubProducts::where('productsId','$products->id')->orderBy('id','DESC')->get();
 
 						@endphp
 
 							
-							@foreach($subproducts as $subproduct)
+							@foreach($catwiseProduct as $subproduct)
                             <div class="product__item">
 								<a href="{{ route('custViewSubProduct')}}">
 									<div class="product__item__pic set-bg">

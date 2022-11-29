@@ -1,12 +1,13 @@
 <?php
 
 use App\Models\z;
+use App\Http\Controllers\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SubProductsController;
-use App\Http\Controllers\Carbon;
+use App\Http\Controllers\Frontend\IndexController;
 
 
 /*
@@ -147,14 +148,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         //$users=User::all();
 
-       // return view('cust.index');
          return view('frontend.index');
         
     });
     
 });
 
-//Route::get('/', [IndexController::class,'index']);
+Route::get('/', [IndexController::class,'index']);
 
 
 

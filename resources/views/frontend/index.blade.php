@@ -3727,154 +3727,87 @@ ol {
     </div>
 </section>
 
- <!-- Shop Section Begin -->
- <section class="shop spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="shop__sidebar">
-                        <div class="sidebar__categories">
-                            <div class="section-title">
-                                <h4>Categories</h4>
-                            </div>
 
-    <!-- Get Product CAtegory -->
-
-							@php
-							$products = App\Models\Products::orderBy('productCategory','ASC')->get();
-							@endphp
-
-							@foreach($products as $products)
-                                <div class="categories__accordion">
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="card">
-                                            <div class="card-heading active">
-                                                <a href="#product{{$products->id}}" data-toggle="collapse" data-target="#collapseOne">{{$products->productCategory}}</a>
-                                            </div>
-
-                                            @php
-                                                $subproduct = App\Models\SubProducts::where('productsId','$products->id')->orderBy('subProductName','ASC')->get();
-
-                                            @endphp 
-                                            
-                                            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    @foreach($subproduct as $subproduct)
-                                                        <ul>
-                                                            <li><a href="#"></a></li>
-                                                        </ul>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-
-                                        
-											
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-
-                       
-                        <div class="sidebar__color">
-                            <div class="section-title">
-                                <h4>Shop by size</h4>
-                            </div>
-                            <div class="size__list color__list">
-                                <label for="black">
-                                    Blacks
-                                    <input type="checkbox" id="black">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="whites">
-                                    Whites
-                                    <input type="checkbox" id="whites">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="reds">
-                                    Reds
-                                    <input type="checkbox" id="reds">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="greys">
-                                    Greys
-                                    <input type="checkbox" id="greys">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="blues">
-                                    Blues
-                                    <input type="checkbox" id="blues">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="beige">
-                                    Beige Tones
-                                    <input type="checkbox" id="beige">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="greens">
-                                    Greens
-                                    <input type="checkbox" id="greens">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="yellows">
-                                    Yellows
-                                    <input type="checkbox" id="yellows">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="section-title">
+                    <h4>All products</h4>
                 </div>
+            </div>
 
-				@php
-					$products = App\Models\Products::orderBy('productCategory','ASC')->get();
-				@endphp
-
-                <div class="col-lg-9 col-md-2">
-                    <div class="row">
-
-					@foreach($products as $product)
-
-                        <div class="col-lg-4 col-md-1">
-							<div class="product__item">
-								<a href="{{ route('custViewSubProduct')}}">
-									<div class="product__item__pic set-bg">
-									<img src="{{asset($product->productImage)}}">
-									<div class="label new">New</div>
-									</div>
-
-								<div class="product__item__text">
-                                    <h6><a href="{{url('/products/subproducts')}}">{{$product->productCategory}}</a></h6>
-										<div class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
+			<div class="col-lg-8 col-md-8">
+                <ul class="filter__controls">
+                    <li class="active" href="#all" data-filter="*">All</li>
+                    
+					@foreach($products as $products)
+					<li><a href="#products{{$products->id}}">{{$products->productCategory}}</a></li>
 					@endforeach
 
+					<li data-filter=".women">Women’s</li>
+                    <li data-filter=".men">Men’s</li>
+					
+                </ul>
+            </div>
+        </div>
 
-                        
-                            </div>
+	@php
+    $products = App\Models\Products::orderBy('productCategory','ASC')->get();
+  	@endphp
+
+	    <div class="row property__gallery">
+			@foreach($products as $product)
+				<div class="col-lg-3 col-md-4 col-sm-6 mix women">
+					<div class="product__item">
+						<a href="{{ route('custViewSubProduct')}}">
+							<div class="product__item__pic set-bg">
+								<img src="{{asset($product->productImage)}}">
+									<div class="label new">New</div>
+										
+							</div>
+						<div class="product__item__text">
+						<h6><a href="{{url('/products/subproducts')}}">{{$product->productCategory}}</a></h6>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							<div class="product__price">$ 59.0</div>
+						</div>
+					</div>
+				</div>
+			@endforeach
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 mix men">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                        <ul class="product__hover">
+                            <li><a href="img/product/product-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">Flowy striped skirt</a></h6>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
                         </div>
-                        <div class="col-lg-12 text-center">
-                            <div class="pagination__option">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
+                        <div class="product__price">$ 49.0</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Shop Section End -->
+		</div>
+	</div>
+</section>
+
+
+
+
 @endsection
