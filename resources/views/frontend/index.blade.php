@@ -3756,11 +3756,11 @@ ol {
     $products = App\Models\Products::orderBy('productCategory','ASC')->get();
   	@endphp
 
-	    <div class="row property__gallery">
+	    <div class="row property__gallery" >
 			@foreach($products as $product)
-				<div class="col-lg-3 col-md-4 col-sm-6 mix women" >
-					<div class="product__item">
-						<a href="{{ route('custViewSubProduct')}}">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix women">
+					<div class="product__item" >
+						<a href="{{ route('viewCustSubProduct',$product->id)}}">
 							<div class="product__item__pic set-bg">
 								<img src="{{asset($product->productImage)}}">
 									<div class="label new">New</div>
@@ -3780,7 +3780,9 @@ ol {
 					</div>
 				</div>
 			@endforeach
-      </div>
+      	</div>
+
+		  
 	</div>
 </section>
 

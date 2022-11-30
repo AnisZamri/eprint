@@ -97,12 +97,7 @@ class SubProductsController extends Controller
 
     //****************************CUSTOMER******************************** */
 
-      //cust view subproduct
-      public function CustViewSubProducts()
-      {
-
-        return view('customers.subproduct.cust_viewSubProduct');
-    }
+      
 
     //cust view subproduct details
     public function CustViewSubProductsDetails()

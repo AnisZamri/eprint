@@ -54,8 +54,8 @@ Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']
 
 /*********************SUB PRODUCT***************/
 
-/*cust view SubProduct */
-Route::get('/products/subproductss', [SubProductsController::class,'CustViewSubProducts'])->name('custViewSubProduct');
+Route::get('/', [IndexController::class,'index']);
+Route::get('/products/viewsubproduct/{id}', [IndexController::class,'ViewCustSubProduct'])->name('viewCustSubProduct');
 
 /*cust view SubProduct */
 Route::get('/products/subproductsDetails', [SubProductsController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
@@ -154,7 +154,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     
 });
 
-Route::get('/', [IndexController::class,'index']);
 
 
 
