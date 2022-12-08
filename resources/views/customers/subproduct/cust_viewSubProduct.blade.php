@@ -3776,7 +3776,8 @@ ol {
 			@foreach($subproduct as $subproduct)
 				<div class="col-lg-3 col-md-4 col-sm-6 mix women">
 					<div class="product__item" >
-					<a data-target="#exampleModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#exampleModal">
+					<a href="{{url('products/subproductsDetails/'.$subproduct->id)}}">
+
 							<div class="product__item__pic set-bg">
 							<img src="{{asset($subproduct->subProductImage)}}">
 									<div class="label new">New</div>
@@ -3883,7 +3884,6 @@ ol {
 
 		  <div class="row">
   <div class="col-sm-6">
-  <a href="{{ route('custViewSubProductDetails')}}">
 
     <div class="card">
       <div class="card-body">

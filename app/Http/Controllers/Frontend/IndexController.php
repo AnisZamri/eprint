@@ -22,9 +22,9 @@ class IndexController extends Controller
     }
     
      //cust view subproduct details
-     public function CustViewSubProductsDetails()
-     {
-        return view('customers.subproduct.cust_viewSubProductDetails');
+     public function CustViewSubProductsDetails($id){
+        $subproduct=SubProducts::findOrFail($id);
+        return view('customers.subproduct.cust_viewSubProductDetails',compact('subproduct'));
      }
 
  

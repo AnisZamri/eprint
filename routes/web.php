@@ -56,7 +56,7 @@ Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']
 
 Route::get('/', [IndexController::class,'index']);
 Route::get('/products/viewsubproduct/{id}', [IndexController::class,'ViewCustSubProduct'])->name('viewCustSubProduct');
-Route::get('/products/subproductsDetails', [IndexController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
+Route::get('/products/subproductsDetails/{id}', [IndexController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
 
 
 
