@@ -3883,7 +3883,7 @@ ol {
 
 		  <div class="row">
   <div class="col-sm-6">
-  <a href="{{ route('custViewSubProductDetails')}}"">
+  <a href="{{ route('custViewSubProductDetails')}}">
 
     <div class="card">
       <div class="card-body">

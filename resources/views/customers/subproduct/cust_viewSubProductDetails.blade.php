@@ -25,11 +25,13 @@
 <div class="container">
   <div class="row">
   
+
     <div class="col-sm">
-           <img src="{{asset('frontend/assets/img/product/stickercar.png')}}" style="width:350px; heigh:350px; margin-top:50px; margin-left:10px">
+    <img src="" style="width:350px; heigh:350px; margin-top:50px; margin-left:10px">
     </div>
 
     <div class="col-sm">
+
         <div class="product__details__text">
                         <h3>Sticker Sheet </h3>
                         <!-- <div class="rating">
@@ -176,7 +178,7 @@
                     </div>
                 </div>
         </div>
-    
+
   </div>
 </div>
 

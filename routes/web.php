@@ -56,9 +56,9 @@ Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']
 
 Route::get('/', [IndexController::class,'index']);
 Route::get('/products/viewsubproduct/{id}', [IndexController::class,'ViewCustSubProduct'])->name('viewCustSubProduct');
+Route::get('/products/subproductsDetails', [IndexController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
 
-/*cust view SubProduct */
-Route::get('/products/subproductsDetails', [SubProductsController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
+
 
 
 /*********************ADD TO CARTT***************/

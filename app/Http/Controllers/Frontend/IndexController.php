@@ -12,7 +12,6 @@ class IndexController extends Controller
     public function index(){
         $products = Products::orderBy('productCategory','ASC')->get();
         $subproduct=SubProducts::orderBy('id','DESC')->get();
-  
         return view('frontend.index',compact('subproduct','products'));        
 
     }
@@ -21,5 +20,14 @@ class IndexController extends Controller
         $subproduct=SubProducts::where('productsId',$id)->get();
         return view('customers.subproduct.cust_viewSubProduct',compact('subproduct'));
     }
+    
+     //cust view subproduct details
+     public function CustViewSubProductsDetails()
+     {
+        return view('customers.subproduct.cust_viewSubProductDetails');
+     }
+
+ 
+
     
 }
