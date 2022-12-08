@@ -23,7 +23,7 @@ class IndexController extends Controller
     
      //cust view subproduct details
      public function CustViewSubProductsDetails($id){
-        $subproduct=SubProducts::findOrFail($id);
+        $subproduct=SubProducts::where('id',$id)->get();
         return view('customers.subproduct.cust_viewSubProductDetails',compact('subproduct'));
      }
 

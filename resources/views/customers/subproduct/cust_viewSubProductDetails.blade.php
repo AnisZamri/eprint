@@ -23,7 +23,7 @@
     <!-- Breadcrumb End -->
 
     @php
-            $subproduct = App\Models\SubProducts::orderBy('subProductName','ASC')->get();
+            $subproduct = App\Models\SubProducts::orderBy('id','ASC')->get();
     @endphp
 
 <div class="container">
@@ -44,9 +44,8 @@
 
                     <h4>{{$subproduct->subProductName}}</h4>
                         
-                        <div class="product__details__price">RM 75.0 <span>$ 83.0</span></div>
-                            <p>Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur
-                            magni lores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <div class="product__details__price">RM{{$subproduct->subProductPrice}}<span>$ 83.0</span></div>
+                            <p>{{$subproduct->subProductDesc}}</p>
 
                             <div class="product__details__widget">
                                 <ul>
@@ -123,9 +122,6 @@
                             </div>
                 
                         </div>   
-
-                
-
 
                     <div class="col-lg-12">
                         <div class="product__details__tab">
