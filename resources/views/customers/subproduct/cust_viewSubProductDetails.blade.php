@@ -22,28 +22,20 @@
     </div>
     <!-- Breadcrumb End -->
 
-    @php
-            $subproduct = App\Models\SubProducts::orderBy('id','ASC')->get();
-    @endphp
 
 <div class="container">
     <div class="row">
    
     @foreach($subproduct as $subproduct)
 
-
         <div class="col-sm">
         <img src="{{asset($subproduct->subProductImage)}}" style="width:350px; heigh:350px; margin-top:50px; margin-left:10px">
         </div>
 
-        <div class="col-sm">
-
-        
+        <div class="col-sm">            
             
             <div class="product__details__text">
-
-                    <h4>{{$subproduct->subProductName}}</h4>
-                        
+                    <h4>{{$subproduct->subProductName}}</h4>                        
                         <div class="product__details__price">RM{{$subproduct->subProductPrice}}<span>$ 83.0</span></div>
                             <p>{{$subproduct->subProductDesc}}</p>
 
