@@ -59,11 +59,8 @@ Route::get('/products/viewsubproduct/{id}', [IndexController::class,'ViewCustSub
 Route::get('/products/subproductsDetails/{id}', [IndexController::class,'CustViewSubProductsDetails'])->name('custViewSubProductDetails');
 
 
-
-
 /*********************ADD TO CARTT***************/
-/*cust view  cart */
-Route::get('/products/subproducts/cart', [SubProductsController::class,'CustCart'])->name('custCart');
+Route::get('/products/subproducts/cart/', [IndexController::class,'CustCart'])->name('custCart');
 
 
 

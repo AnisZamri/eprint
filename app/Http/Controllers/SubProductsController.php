@@ -99,16 +99,6 @@ class SubProductsController extends Controller
 
       
 
-   
-
-    //cust view cart 
-    public function CustCart()
-    {
-
-    return view('customers.subproduct.cust_cart');
-    }
-
-
 
 
 

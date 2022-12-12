@@ -3737,19 +3737,7 @@ ol {
                 </div>
             </div>
 
-			<div class="col-lg-8 col-md-8">
-                <ul class="filter__controls">
-                    <li class="active" href="#all" data-filter="*">All</li>
-                    
-					@foreach($products as $products)
-					<li><a href="#products{{$products->id}}">{{$products->productCategory}}</a></li>
-					@endforeach
-
-					<li data-filter=".women">Women’s</li>
-                    <li data-filter=".men">Men’s</li>
-					
-                </ul>
-            </div>
+			
         </div>
 
 	@php

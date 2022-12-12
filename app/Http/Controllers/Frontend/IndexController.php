@@ -27,6 +27,15 @@ class IndexController extends Controller
         return view('customers.subproduct.cust_viewSubProductDetails',compact('subproduct'));
      }
 
+    //cust view cart 
+    public function CustCart(){
+        $subproduct=SubProducts::all();
+        return view('customers.subproduct.cust_cart',compact('subproduct'));
+     
+    }
+
+
+
  
 
     
