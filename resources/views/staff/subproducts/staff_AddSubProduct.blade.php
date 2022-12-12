@@ -63,7 +63,7 @@
                                                                          
                           <div class="mb-3"> 
                                 <label for="subProductName" class="form-label">Product Name</label> 
-                                <input type="text" name="subProductName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > 
+                                <input type="text" name="subProductName" class="form-control" id="subProductName" aria-describedby="emailHelp" > 
                                 @error('productName') 
                                     <span class="text-danger">{{$message}}</span> 
                                 @enderror 

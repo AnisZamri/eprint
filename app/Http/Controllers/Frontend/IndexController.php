@@ -6,6 +6,7 @@ use App\Models\Products;
 use App\Models\SubProducts;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class IndexController extends Controller
 {
@@ -27,16 +28,14 @@ class IndexController extends Controller
         return view('customers.subproduct.cust_viewSubProductDetails',compact('subproduct'));
      }
 
+   
     //cust view cart 
-    public function CustCart(){
-        $subproduct=SubProducts::all();
-        return view('customers.subproduct.cust_cart',compact('subproduct'));
-     
+    public function CustCart()
+    {
+    return view('customers.subproduct.cust_cart');
     }
 
-
-
- 
+   
 
     
 }

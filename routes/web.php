@@ -3,6 +3,7 @@
 use App\Models\z;
 use App\Http\Controllers\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\ProductsController;
@@ -60,7 +61,11 @@ Route::get('/products/subproductsDetails/{id}', [IndexController::class,'CustVie
 
 
 /*********************ADD TO CARTT***************/
+
 Route::get('/products/subproducts/cart/', [IndexController::class,'CustCart'])->name('custCart');
+Route::post('/products/subproducts/cart/store/', [CartController::class,'CartStore'])->name('cartStore');
+
+
 
 
 

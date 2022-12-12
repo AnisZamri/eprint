@@ -59,6 +59,7 @@
 <script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/jquery.nicescroll.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/main.js')}}js/main.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,10 @@
 @extends ('frontend.main_master')
 @section('content')
 
+@if(session('message'))
+<div>{{session('message')}}</div>
+@endif
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -39,38 +43,8 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                            @foreach($subproduct as $subproduct)
- 
-                                <tr>
-                                    <td class="cart__product__item">
-                                        <img src="{{asset($subproduct->subProductImage)}}" style="height:80px;">
-                                    </td>
-                                    <td class="cart__product__item">
-                                        <div class="cart__product__item__title">
-                                            <h6>{{$subproduct->subProductName}}</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">RM{{$subproduct->subProductPrice}}</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 300.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
-                                </tr>
-                               
-                               
-                               
-                                @endforeach
+                            <tbody id="cartPage">
+                           
                             </tbody>
                         </table>
                     </div>

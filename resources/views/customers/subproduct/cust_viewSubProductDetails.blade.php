@@ -100,13 +100,22 @@
                             </div>   
 
                             <div class="product__details__button">
-                                <div class="quantity">
-                                    <span>Quantity:</span>
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
+                                
+
+                                <form action="{{route('cartStore')}}" method="POST">
+                                    @csrf
+
+                                    <input type="hidden" name="productsId" value="{{$subproduct->id}}">
+                                    <div class="quantity">
+                                        <span>Quantity:</span>
+                                            <div class="pro-qty">
+                                                <input type="number" value="1" name="quantity" id="quantity">
+                                            </div>
                                     </div>
-                                </div>
-                                <a href="{{url('products/subproducts/cart/')}}" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
+
+                                    <button type="submit"  type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
+                                </form>
+
 
                                 <ul>
                                     <li><a href="#"><span class="icon_heart_alt"></span></a></li>
@@ -153,6 +162,7 @@
 
     </div>
 </div>
+
 
 
 
