@@ -62,9 +62,10 @@ Route::get('/products/subproductsDetails/{id}', [IndexController::class,'CustVie
 
 /*********************ADD TO CARTT***************/
 
-Route::get('/products/subproducts/cart/', [IndexController::class,'CustCart'])->name('custCart');
-Route::post('/products/subproducts/cart/store/', [CartController::class,'CartStore'])->name('cartStore');
+Route::get('/products/subproducts/cart/{id}', [IndexController::class,'CustCart'])->name('custCart');
+Route::get('/products/subproducts/cart/store/', [CartController::class,'CartStore'])->name('cartStore');
 
+Route::get('/products/subproducts/checkout', [IndexController::class,'CustCheckout'])->name('custCheckout');
 
 
 

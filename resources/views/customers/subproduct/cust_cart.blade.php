@@ -1,15 +1,11 @@
 @extends ('frontend.main_master')
 @section('content')
-
-@if(session('message'))
-<div>{{session('message')}}</div>
-@endif
-
+ 
 <!DOCTYPE html>
 <html lang="zxx">
-
+ 
 <body>
-
+ 
  <!-- Breadcrumb Begin -->
  <div class="breadcrumb-option">
         <div class="container">
@@ -24,7 +20,7 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-
+ 
     <!-- Shop Cart Section Begin -->
     <section class="shop-cart spad">
         <div class="container">
@@ -42,9 +38,41 @@
                                     <th></th>
                                 </tr>
                             </thead>
-
+ 
                             <tbody id="cartPage">
                            
+@foreach($subproduct as $subproduct)
+ 
+ <tr>
+     <td class="cart__product__item">
+         <img src="{{asset($subproduct->subProductImage)}}" style="height:80px;">
+     </td>
+     <td class="cart__product__item">
+         <div class="cart__product__item__title">
+             <h6>{{$subproduct->subProductName}}</h6>
+             <div class="rating">
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+             </div>
+         </div>
+     </td>
+     <td class="cart__price">RM{{$subproduct->subProductPrice}}</td>
+     <td class="cart__quantity">
+         <div class="pro-qty">
+             <input type="text" value="1">
+         </div>
+     </td>
+     <td class="cart__total">$ 300.0</td>
+     <td class="cart__close"><span class="icon_close"></span></td>
+ </tr>
+ 
+ 
+ 
+ @endforeach
+ 
                             </tbody>
                         </table>
                     </div>
@@ -60,9 +88,9 @@
                     </div>
                 </div>
             </div>
-
+ 
                 </div>
-                
+               
                 <div class="col-lg-4">
                     <div class="discount__content">
                         <h6>Discount codes</h6>
@@ -71,29 +99,29 @@
                             <button type="submit" class="site-btn">Apply</button>
                         </form>
                     </div>
-
+ 
                     <br><div class="cart__total__procced">
                         <h6>Cart total</h6>
                         <ul>
                             <li>Subtotal <span>$ 750.0</span></li>
                             <li>Total <span>$ 750.0</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">Proceed to checkout</a>
+                        <a href="{{ route('custCheckout')}}" class="primary-btn">Proceed to checkout</a>
                     </div>
                 </div>
                
-                
+               
             </div>
-
-          
-            
-            
+ 
+         
+           
+           
         </div>
     </section>
     <!-- Shop Cart Section End -->
-
-
-
+ 
+ 
+ 
     <!-- Instagram Begin -->
     <div class="instagram">
         <div class="container-fluid">
@@ -150,7 +178,7 @@
         </div>
     </div>
     <!-- Instagram End -->
-
+ 
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
@@ -222,7 +250,7 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-
+ 
     <!-- Search Begin -->
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
@@ -233,18 +261,10 @@
         </div>
     </div>
     <!-- Search End -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/main.js"></script>
+ 
+   
 </body>
-
+ 
 </html>@endsection
+ 
+ 

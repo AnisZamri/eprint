@@ -100,12 +100,8 @@
                             </div>   
 
                             <div class="product__details__button">
-                                
+                                                            
 
-                                <form action="{{route('cartStore')}}" method="POST">
-                                    @csrf
-
-                                    <input type="hidden" name="productsId" value="{{$subproduct->id}}">
                                     <div class="quantity">
                                         <span>Quantity:</span>
                                             <div class="pro-qty">
@@ -113,9 +109,8 @@
                                             </div>
                                     </div>
 
-                                    <button type="submit"  type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
-                                </form>
 
+                                    <a href="{{url('/products/subproducts/cart/'.$subproduct->id)}}" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
 
                                 <ul>
                                     <li><a href="#"><span class="icon_heart_alt"></span></a></li>

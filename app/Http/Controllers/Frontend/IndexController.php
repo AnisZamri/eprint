@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\User;
 use App\Models\Products;
 use App\Models\SubProducts;
 use Illuminate\Http\Request;
@@ -30,10 +31,18 @@ class IndexController extends Controller
 
    
     //cust view cart 
-    public function CustCart()
-    {
-    return view('customers.subproduct.cust_cart');
+    public function CustCart($id)
+      {  $subproduct=SubProducts::where('id',$id)->get();
+
+    return view('customers.subproduct.cust_cart',compact('subproduct'));
     }
+
+    public function CustCheckout()
+    {  
+        $user = User::all();
+         return view('customers.order.cust_checkout',compact('user'));
+  }
+
 
    
 
