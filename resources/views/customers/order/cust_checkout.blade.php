@@ -32,7 +32,6 @@
                 </div>
             </div>
 
-            @foreach ($user as $user)
             <form action="#" class="checkout__form">
                 <div class="row">
                     <div class="col-lg-8">
@@ -41,7 +40,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>First Name <span>*</span></p>
-                                    <input type="text" id="name" value="{{Auth::guard('users')->user()->name}}">
+                                    <input type="text" id="name" >
 
                                 </div>
                             </div>
@@ -161,7 +160,6 @@
                     </div>
                 </form>
 
-                @endforeach
             </div>
         </section>
         <!-- Checkout Section End -->
