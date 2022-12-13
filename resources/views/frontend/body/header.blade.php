@@ -37,7 +37,7 @@
                         <ul>
                             <li class="active"><a href="{{ url('/dashboard') }}">Home</a></li>
                             <li><a href="{{ route ('allproducts') }}">Products</a></li>
-                            <li><a href="">Sub Products</a></li>
+                            <li><a href="{{ route ('subProductTest') }}">Sub Products</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./product-details.html">Product Details</a></li>

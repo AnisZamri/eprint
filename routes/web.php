@@ -68,6 +68,11 @@ Route::get('/products/subproducts/cart/store/', [CartController::class,'CartStor
 Route::get('/products/subproducts/checkout', [IndexController::class,'CustCheckout'])->name('custCheckout');
 
 
+Route::get('/subproductTest', [CartController::class, 'index'])->name('subProductTest');
+Route::get('viewCartTest', [CartController::class, 'viewCartTest'])->name('viewCartTest');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update_cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
 
 
 
