@@ -117,6 +117,7 @@
 
 @include ('frontend.body.header')
 
+
    
 @yield('content')
 
