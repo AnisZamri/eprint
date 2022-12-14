@@ -464,7 +464,7 @@ ol {
 	display: inline-block;
 	font-size: 18px;
 	color: #111111;
-	margin-right: 20px;
+	margin-right: 300px;
 	cursor: pointer;
 }
 
@@ -3679,4 +3679,6 @@ ol {
 		width: 100%;
 		font-size: 24px;
 	}
+
+	
 }

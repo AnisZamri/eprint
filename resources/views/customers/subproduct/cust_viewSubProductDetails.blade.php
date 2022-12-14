@@ -110,7 +110,7 @@
                                     </div>
 
 
-                                    <a href="{{url('/products/subproducts/cart/'.$subproduct->id)}}" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
+                                    <a href="{{ route('add_to_cart', $subproduct->id) }}" class="cart-btn"><span class="icon_bag_alt" role="button"></span> Add to cart</a>
 
                                 <ul>
                                     <li><a href="#"><span class="icon_heart_alt"></span></a></li>

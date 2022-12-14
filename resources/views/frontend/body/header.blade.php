@@ -58,14 +58,125 @@
                             <a href="#">Register</a>
                         </div>
                         <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                        </ul>
+                                <li><span class="icon_search search-switch"></span></li>
+                                
+                                <li><a href="#"><span class="icon_heart_alt"></span>
+                                    <div class="tip">2</div>
+                                </a></li>
+
+                            <li>
+                            <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-12">
+                                    <a data-toggle="dropdown"><span class="icon_bag_alt"></span>
+                                    <div class="tip">{{ count((array) session('cart')) }}</div>
+                                </a>
+
+                                <div class="dropdown-menu">
+                    <div class="row total-header-section">
+                        @php $total = 0 @endphp
+                        @foreach((array) session('cart') as $id => $details)
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+
+                            
+                        @endforeach
+                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                            <p>Total Price: <span class="text-info">RM {{ $total }}</span></p>
+                        </div>
+                       
+                    </div>
+                    @if(session('cart'))
+                        @foreach(session('cart') as $id => $details)
+                            <div class="row cart-detail">
+                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                <img src="{{asset($details['photo'])}}" />
+                                </div>
+                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                    <p>{{ $details['product_name'] }}</p>
+                                    <span class="price text-info">RM{{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                            <a href="{{ route('viewCartTest') }}" class="btn btn-primary btn-block">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<div class="container">
+   
+    @if(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
+        </div> 
+    @endif
+   
+</div></li>
+</ul>
+                        
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-12">
+            <div class="dropdown">
+                <a data-toggle="dropdown">
+                    <i class="icon_bag_alt" aria-hidden="true"></i> 
+                    <div class="tip">{{ count((array) session('cart')) }}</div>
+                </a>
+ 
+                <div class="dropdown-menu">
+                    <div class="row total-header-section">
+                        @php $total = 0 @endphp
+                        @foreach((array) session('cart') as $id => $details)
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+
+                            
+                        @endforeach
+                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                            <p>Total Price: <span class="text-info">RM {{ $total }}</span></p>
+                        </div>
+                       
+                    </div>
+                    @if(session('cart'))
+                        @foreach(session('cart') as $id => $details)
+                            <div class="row cart-detail">
+                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                <img src="{{asset($details['photo'])}}" />
+                                </div>
+                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                    <p>{{ $details['product_name'] }}</p>
+                                    <span class="price text-info">RM{{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                            <a href="{{ route('viewCartTest') }}" class="btn btn-primary btn-block">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+<br/>
+<div class="container">
+   
+    @if(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
+        </div> 
+    @endif
+   
+</div>
                     </div>
                 </div>
             </div>
