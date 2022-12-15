@@ -21,6 +21,7 @@
     </div>
     <!-- Breadcrumb End -->
  
+    
     <!-- Shop Cart Section Begin -->
     <section class="shop-cart spad">
         <div class="container">
@@ -30,20 +31,25 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th style="width:15%"></th>
-                                    <th style="width:15%">Product</th>
-                                    <th>Price</th>
-                                    <th style="width:8%">Quantity</th>
+                                    <th style="width:20%"></th>
+                                    <th style="width:15%; text:center">Product</th>
+                                    <th style="width:15%">Price</th>
+                                    <th class="text-center" style="width:10%">Quantity</th>
+                                    <th class="text-center" style="width:20%">Total</th>
+
                                     <th></th>
                                 </tr>
                             </thead>
  
-                            <tbody id="cartPage">
+                        <tbody id="cartPage">
                             @php $total = 0 @endphp
                                     @if(session('cart'))
                                         @foreach(session('cart') as $id => $details)
                                             @php $total += $details['price'] * $details['quantity'] @endphp
+                                            
+                                            
                                             <tr data-id="{{ $id }}">
+
                                                 <td data-th="Image">
                                                     <div class="row">
                                                         <div class=""><img src="{{asset($details['photo'])}}" style="height:80px" /></div>
@@ -60,14 +66,19 @@
                                                 <td data-th="Price">RM{{ $details['price'] }}</td>
 
                                                 <td data-th="Quantity">
-                                                    
-                                                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
+                                                     <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
                                                 </td>
 
-                                                <td data-th="Subtotal" class="text-center">RM{{ $details['price'] * $details['quantity'] }}</td>
-                                                <td class="actions" data-th="">
-                                                    <button class="btn btn-danger btn-sm cart_remove"><i class="fa fa-trash-o"></i> Delete</button>
+                                               
+
+                                                <td data-th="Total" class="text-center">RM{{ $details['price'] * $details['quantity'] }}</td>
+
+                                                                              
+                                                <td class="cart_remove" data-th="">
+                                                    <i class="fa fa-times"></i> 
                                                 </td>
+
+
                                             </tr>
                                         @endforeach
                                     @endif
@@ -102,9 +113,23 @@
                     <br><div class="cart__total__procced">
                         <h6>Cart total</h6>
                         <ul>
-                            <li>Subtotal <span>$ 750.0</span></li>
-                            <li>Total <span>$ 750.0</span></li>
+                            <!-- <li>Subtotal <span>RM 750.0</span></li> -->
+
+                            @php $total = 0 @endphp
+                                                                    @foreach((array) session('cart') as $id => $details)
+                                                                        @php $total += $details['price'] * $details['quantity'] @endphp
+
+                                                                        
+                                                                    @endforeach
+
+
+
+                            <li>Total <span>RM{{ $total }}</span></li>
+
+                            
                         </ul>
+
+
                         <a href="{{ route('custCheckout')}}" class="primary-btn">Proceed to checkout</a>
                     </div>
                 </div>

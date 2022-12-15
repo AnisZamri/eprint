@@ -122,6 +122,18 @@
 @yield('scripts')
 @include ('frontend.body.footer')
 
+ 
+<script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery-ui.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/mixitup.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.countdown.min.js')}}s"></script>
+<script src="{{asset('frontend/assets/js/jquery.slicknav.js')}}"></script>
+<script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.nicescroll.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/main.js')}}js/main.js"></script>
+ 
+
 </body>
 </html>
 
