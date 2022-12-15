@@ -37,6 +37,8 @@ Route::get('/products/edit/{id}', [ProductsController::class,'EditProduct'])->na
 Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']);
 Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
 
+Route::get('/staff/products/test', [ProductsController::class,'ViewTestProduct'])->name('ViewTestProduct');
+
 
 /*********************MANAGE SUB PRODUCT***************/
 

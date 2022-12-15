@@ -27,8 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="#">Have a coupon?</a> Click
-                    here to enter your code.</h6>
+                    <h6 class="coupon__link"><span class=""></span> <a href="#"></a> </h6>
                 </div>
             </div>
 

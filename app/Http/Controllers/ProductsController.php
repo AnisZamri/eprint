@@ -19,6 +19,12 @@ class ProductsController extends Controller
         return view('staff.products.staff_AddProduct',compact('products'));
     } 
 
+    public function ViewTestProduct(){ 
+        $products=Products::all();
+        return view('staff.products.staff_viewTest',compact('products'));
+    } 
+
+
 
     public function AddProducts(Request $request)
     {

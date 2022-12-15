@@ -27,6 +27,12 @@
           <i class="bi bi-circle"></i><span>Add Sub Products</span>
         </a>
       </li>
+
+      <li>
+        <a href="{{ route ('ViewTestProduct') }}">
+          <i class="bi bi-circle"></i><span>Add Test Products</span>
+        </a>
+      </li>
      
       <li>
         <a href="components-alerts.html">
