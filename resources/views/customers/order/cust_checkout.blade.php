@@ -118,43 +118,47 @@
                             <div class="checkout__order">
                                 <h5>Your order</h5>
                                 <div class="checkout__order__product">
+
+                                
                                     <ul>
                                         <li>
                                             <span class="top__text">Product</span>
                                             <span class="top__text__right">Total</span>
                                         </li>
-                                        <li>01. Chain buck bag <span>$ 300.0</span></li>
-                                        <li>02. Zip-pockets pebbled<br /> tote briefcase <span>$ 170.0</span></li>
-                                        <li>03. Black jean <span>$ 170.0</span></li>
-                                        <li>04. Cotton shirt <span>$ 110.0</span></li>
+
+                                        @if(session('cart'))
+                                             @foreach(session('cart') as $id => $details)
+
+                                            <li>{{ $details['product_name'] }}<span>RM{{ $details['price'] * $details['quantity'] }}</span></li>
+                                                                        
+                                            @endforeach
+                                         @endif
+
+                                   
                                     </ul>
                                 </div>
                                 <div class="checkout__order__total">
                                     <ul>
-                                        <li>Subtotal <span>$ 750.0</span></li>
-                                        <li>Total <span>$ 750.0</span></li>
+
+                                    @php $total = 0 @endphp
+
+                                    @foreach((array) session('cart') as $id => $details)
+                                        @php $total += $details['price'] * $details['quantity'] @endphp
+                                    @endforeach
+                                
+                                    <li>Subtotal <span>RM{{ $total }}</span></li>
+                                <li>Total <span>RM{{ $total }}</span></li>
+
+                                
                                     </ul>
                                 </div>
                                 <div class="checkout__order__widget">
-                                    <label for="o-acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="o-acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing customer
-                                    login at the top of the page.</p>
-                                    <label for="check-payment">
-                                        Cheque payment
-                                        <input type="checkbox" id="check-payment">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label for="paypal">
-                                        PayPal
-                                        <input type="checkbox" id="paypal">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                        <p class="text-dark"><b>Upload Receipt</b></p>
+
+                                    <p>Please make your payment directly into our bank account before checkout. Your order status will not be change to "In Process" until the funds have cleared in our account.</p>
+                                 <input type="file" name="productImage"  id="exampleInputEmail1" aria-describedby="emailHelp"> 
                                 </div>
-                                <button type="submit" class="site-btn">Place oder</button>
+                                <br><button type="submit" class="site-btn">Place order</button>
                             </div>
                         </div>
                     </div>

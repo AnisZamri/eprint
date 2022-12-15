@@ -2476,6 +2476,12 @@ ol {
 	float: left;
 }
 
+.checkout__order__product ul li .top__text__center {
+	font-size: 16px;
+	color: #111111;
+	font-weight: 600;
+	float: left;
+}
 .checkout__order__product ul li .top__text__right {
 	font-size: 16px;
 	color: #111111;

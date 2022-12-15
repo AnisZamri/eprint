@@ -37,11 +37,7 @@ class IndexController extends Controller
     return view('customers.subproduct.cust_cart',compact('subproduct'));
     }
 
-    public function CustCheckout()
-    {  
-        $user = User::all();
-         return view('customers.order.cust_checkout',compact('user'));
-  }
+    
 
 
    

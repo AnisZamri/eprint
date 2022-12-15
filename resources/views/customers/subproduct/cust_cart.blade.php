@@ -112,22 +112,18 @@
  
                     <br><div class="cart__total__procced">
                         <h6>Cart total</h6>
-                        <ul>
-                            <!-- <li>Subtotal <span>RM 750.0</span></li> -->
+                            <ul>
+                                
 
-                            @php $total = 0 @endphp
-                                                                    @foreach((array) session('cart') as $id => $details)
-                                                                        @php $total += $details['price'] * $details['quantity'] @endphp
+                                @php $total = 0 @endphp
 
-                                                                        
-                                                                    @endforeach
-
-
-
-                            <li>Total <span>RM{{ $total }}</span></li>
-
-                            
-                        </ul>
+                                    @foreach((array) session('cart') as $id => $details)
+                                        @php $total += $details['price'] * $details['quantity'] @endphp
+                                    @endforeach
+                                
+                                    <li>Subtotal <span>RM{{ $total }}</span></li>
+                                <li>Total <span>RM{{ $total }}</span></li>
+                            </ul>
 
 
                         <a href="{{ route('custCheckout')}}" class="primary-btn">Proceed to checkout</a>

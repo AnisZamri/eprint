@@ -12,31 +12,30 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class CartController extends Controller
 {
     
- public function CartStore (Request $request)
- {
-    $products=SubProducts::findOrFail($request->input(key:'id'));
-    Cart::add(
-        $products->id,
-        $products->name,
-        $request->input(key:'quantity'),
-        $products->price/100,
-    );
+    public function CartStore (Request $request)
+    {
+        $products=SubProducts::findOrFail($request->input(key:'id'));
+        Cart::add(
+            $products->id,
+            $products->name,
+            $request->input(key:'quantity'),
+            $products->price/100,
+        );
 
-    return redirect()->route(route:'custCart')->with('message','Successfully added');
-
- } 
+        return redirect()->route(route:'custCart')->with('message','Successfully added');
+    } 
  
- public function index()
- {
-     $subproduct = SubProducts::all();
-     return view('customers.subproduct.cust_subProductTest',compact('subproduct'));
-
- }
+    public function index()
+    {
+        $subproduct = SubProducts::all();
+        return view('customers.subproduct.cust_subProductTest',compact('subproduct'));
+    }
 
      public function viewCartTest()
     {
         return view('customers.subproduct.cust_cart');
     }
+
     public function addToCart($id)
     {
         $subproduct = SubProducts::findOrFail($id);
@@ -54,7 +53,6 @@ class CartController extends Controller
             ];
         }
 
- 
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product add to cart successfully!');
     }
@@ -79,5 +77,15 @@ class CartController extends Controller
             }
             session()->flash('success', 'Product successfully removed!');
         }
+    }
+
+    public function CustCheckout()
+    {  
+        
+ 
+
+                return view ('customers.order.cust_checkout');
+
+           
     }
 }
