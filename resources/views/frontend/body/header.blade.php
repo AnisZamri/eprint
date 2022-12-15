@@ -56,90 +56,72 @@
 
                 <div class="col-lg-3">
                     <div class="header__right"> 
-                                    <div class="offcanvas__widget"> 
-                                        <div class="container">
-                                            <div class="row">
+                        <div class="offcanvas__widget"> 
+                            <div class="container">
+                                <div class="row">
 
-                                                <div class="header__right__auth">
-                                                    <a href="#">Login</a>
-                                                    <a href="#">Register</a>
-                                                </div>
+                                    <div class="header__right__auth">
+                                        <a href="#">Login</a>
+                                         <a href="#">Register</a>
+                                    </div>
 
+                                    <div class="header__right__widget">
 
-                                                <div class="header__right__widget">
+                                        <ul class="offcanvas__widget">
+                                                        <li><span class="icon_search search-switch"></span></li>
 
-                                                <ul class="offcanvas__widget">
-                                                    <li><span class="icon_search search-switch"></span></li>
-
-                                                    <div class="dropdown">
-                                                 
-                                                    <i class="icon_bag_alt" data-toggle="dropdown"aria-hidden="true"></i>  
-                                                    <span class="tip">{{ count((array) session('cart')) }}</span>
-
+                                                        <div class="dropdown">
+                                                    
+                                                            <i class="icon_bag_alt" data-toggle="dropdown"aria-hidden="true"></i>  
+                                                            <span class="tip">{{ count((array) session('cart')) }}</span>
                                                         
 
-                                                        <div class="dropdown-menu">
-                                                            <div class="row total-header-section">
-                                                                @php $total = 0 @endphp
-                                                                @foreach((array) session('cart') as $id => $details)
-                                                                    @php $total += $details['price'] * $details['quantity'] @endphp
+                                                            <div class="dropdown-menu">
+                                                                <div class="row total-header-section">
+                                                                    @php $total = 0 @endphp
+                                                                    @foreach((array) session('cart') as $id => $details)
+                                                                        @php $total += $details['price'] * $details['quantity'] @endphp
 
-                                                                    
-                                                                @endforeach
-                                                                <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
-                                                                    <p>Total Price: <span class="text-info">RM {{ $total }}</span></p>
-                                                                </div>
-                                                            
-                                                            </div>
-                                                            @if(session('cart'))
-                                                                @foreach(session('cart') as $id => $details)
-                                                                    <div class="row cart-detail">
-                                                                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                                                        <img src="{{asset($details['photo'])}}" />
-                                                                        </div>
-                                                                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                                                            <p>{{ $details['product_name'] }}</p>
-                                                                            <span class="price text-info">RM{{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
-                                                                        </div>
+                                                                        
+                                                                    @endforeach
+                                                                    <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                                                                        <p>Total Price: <span class="text-info">RM {{ $total }}</span></p>
                                                                     </div>
-                                                                @endforeach
-                                                            @endif
-                                                            <div class="row">
-                                                                <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                                                    <a href="{{ route('viewCartTest') }}" class="btn btn-primary btn-block">View all</a>
+                                                                
                                                                 </div>
+
+                                                                @if(session('cart'))
+                                                                    @foreach(session('cart') as $id => $details)
+                                                                        <div class="row cart-detail">
+                                                                            <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                                            <img src="{{asset($details['photo'])}}" />
+                                                                            </div>
+                                                                            <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                                                                <p>{{ $details['product_name'] }}</p>
+                                                                                <span class="price text-info">RM{{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                @endif
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                                                        <a href="{{ route('viewCartTest') }}" class="btn btn-primary btn-block">View all</a>
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
                                                         </div>
-                                                    </div>
-                                         
-                                                    <div class="container">
-                                                        @if(session('success'))
-                                                            <div class="alert alert-success">
-                                                            {{ session('success') }}
-                                                            </div> 
-                                                        @endif
-                                                    </div>
-
-
-                                                </ul>
-
-
-                                                     
-                                            
+                                        </ul>
                                     </div>
+                                </div>
                             </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-
                         </div>
+                            
+
                     </div>
                 </div>
 
-
             </div>
         </div>
-
     </header>

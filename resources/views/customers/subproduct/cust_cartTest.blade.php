@@ -1,17 +1,39 @@
-@extends('customers.subproduct.layout')
+@extends ('frontend.main_master')
    
 @section('content')
-<table id="cart" class="table table-hover table-condensed">
-    <thead>
-        <tr>
-            <th style="width:50%">Product</th>
-            <th style="width:10%">Price</th>
-            <th style="width:8%">Quantity</th>
-            <th style="width:22%" class="text-center">Subtotal</th>
-            <th style="width:10%"></th>
-        </tr>
-    </thead>
-    <tbody>
+
+ <!-- Breadcrumb Begin -->
+ <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Shopping cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="shop-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shop__cart__table">
+                    <table id="cart" class="">
+                   
+                        <thead>
+                            <tr>
+                                <th style="width:50%">Product</th>
+                                <th style="width:10%">Price</th>
+                                <th style="width:8%">Quantity</th>
+                                <th style="width:22%" class="text-center">Subtotal</th>
+                                <th style="width:10%"></th>
+                            </tr>
+                        </thead>
+    <tbody id="cartPage">
         @php $total = 0 @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
@@ -49,6 +71,14 @@
         </tr>
     </tfoot>
 </table>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+
+
 @endsection
    
 @section('scripts')

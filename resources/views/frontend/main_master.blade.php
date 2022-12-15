@@ -117,8 +117,6 @@
 
 @include ('frontend.body.header')
 
-
-   
 @yield('content')
 
 @yield('scripts')

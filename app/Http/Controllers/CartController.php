@@ -35,7 +35,7 @@ class CartController extends Controller
 
      public function viewCartTest()
     {
-        return view('customers.subproduct.cust_cartTest');
+        return view('customers.subproduct.cust_cart');
     }
     public function addToCart($id)
     {

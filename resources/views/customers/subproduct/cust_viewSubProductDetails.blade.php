@@ -25,6 +25,14 @@
 
 <div class="container">
     <div class="row">
+
+    <div class="container">
+                                                        @if(session('success'))
+                                                            <div class="alert alert-success">
+                                                            {{ session('success') }}
+                                                            </div> 
+                                                        @endif
+                                                    </div>
    
     @foreach($subproduct as $subproduct)
 

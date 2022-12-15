@@ -1,155 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel 9 Shopping Cart add to cart</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-   
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-
-    <style>
-        body {
-    background-color: #f6f6f6;
-}
-.img_thumbnail {
-    position: relative;
-    padding: 0px;
-    margin-bottom: 20px;
-}
-.img_thumbnail img {
-    width: 100%;
-}
-.img_thumbnail .caption{
-    margin: 7px;
-    text-align: center;
-}
-.dropdown{
-    float:right;
-    padding-right: 30px;
-}
-.btn{
-    border:0px;
-    margin:10px 0px;
-    box-shadow:none !important;
-}
-.dropdown .dropdown-menu{
-    padding:20px;
-    top:30px !important;
-    width:350px !important;
-    left:-110px !important;
-    box-shadow:0px 5px 30px black;
-}
-.total-header-section{
-    border-bottom:1px solid #d2d2d2;
-}
-.total-section p{
-    margin-bottom:20px;
-}
-.cart-detail{
-    padding:15px 0px;
-}
-.cart-detail-img img{
-    width:100%;
-    height:100%;
-    padding-left:15px;
-}
-.cart-detail-product p{
-    margin:0px;
-    color:#000;
-    font-weight:500;
-}
-.cart-detail .price{
-    font-size:12px;
-    margin-right:10px;
-    font-weight:500;
-}
-.cart-detail .count{
-    color:#000;
-}
-.checkout{
-    border-top:1px solid #d2d2d2;
-    padding-top: 15px;
-}
-.checkout .btn-primary{
-    border-radius:50px;
  
-}
-.dropdown-menu:before{
-    content: " ";
-    position:absolute;
-    top:-20px;
-    right:50px;
-    border:10px solid transparent;
-    border-bottom-color:#fff;
-}
- 
-.productlist {
-    box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
-    border-radius: 10px;
-    height: 100%;
-    overflow: hidden;
-}
-        </style>
-</head>
-<body>
-
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                </button>
- 
-                <div class="dropdown-menu">
-                    <div class="row total-header-section">
-                        @php $total = 0 @endphp
-                        @foreach((array) session('cart') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-
-                            
-                        @endforeach
-                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
-                            <p>Total Price: <span class="text-info">RM {{ $total }}</span></p>
-                        </div>
-                       
-                    </div>
-                    @if(session('cart'))
-                        @foreach(session('cart') as $id => $details)
-                            <div class="row cart-detail">
-                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                <img src="{{asset($details['photo'])}}" />
-                                </div>
-                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                    <p>{{ $details['product_name'] }}</p>
-                                    <span class="price text-info">RM{{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ route('viewCartTest') }}" class="btn btn-primary btn-block">View all</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@foreach($subproduct as $subproduct)
+                                   
+                                   <tr>
+                                       <td class="cart__product__item">
+                                           <img src="{{asset($subproduct->subProductImage)}}" style="height:80px;">
+                                       </td>
+                                       <td class="cart__product__item">
+                                           <div class="cart__product__item__title">
+                                               <h6>{{$subproduct->subProductName}}</h6>
+                                               <div class="rating">
+                                                   <i class="fa fa-star"></i>
+                                                   <i class="fa fa-star"></i>
+                                                   <i class="fa fa-star"></i>
+                                                   <i class="fa fa-star"></i>
+                                                   <i class="fa fa-star"></i>
+                                               </div>
+                                           </div>
+                                       </td>
+                                       <td class="cart__price">RM{{$subproduct->subProductPrice}}</td>
+                                       <td class="cart__quantity">
+                                           <div class="pro-qty">
+                                               <input type="text" value="1">
+                                           </div>
+                                       </td>
+                                       <td class="cart__total">$ 300.0</td>
+                                       <td class="cart__close"><span class="icon_close"></span></td>
+                                   </tr>
+                                  
+                               @endforeach
+                               @section('scripts')
+<script type="text/javascript">
    
-<br/>
-<div class="container">
+    $(".cart_update").change(function (e) {
+        e.preventDefault();
    
-    @if(session('success'))
-        <div class="alert alert-success">
-          {{ session('success') }}
-        </div> 
-    @endif
+        var ele = $(this);
    
-    @yield('content')
-</div>
+        $.ajax({
+            url: '{{ route('update_cart') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}', 
+                id: ele.parents("tr").attr("data-id"), 
+                quantity: ele.parents("tr").find(".quantity").val()
+            },
+            success: function (response) {
+               window.location.reload();
+            }
+        });
+    });
    
-@yield('scripts')
-</body>
-</html>
-
+    $(".cart_remove").click(function (e) {
+        e.preventDefault();
+   
+        var ele = $(this);
+   
+        if(confirm("Do you really want to remove?")) {
+            $.ajax({
+                url: '{{ route('remove_from_cart') }}',
+                method: "DELETE",
+                data: {
+                    _token: '{{ csrf_token() }}', 
+                    id: ele.parents("tr").attr("data-id")
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
+   
+</script>
