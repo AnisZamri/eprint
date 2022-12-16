@@ -35,7 +35,7 @@
                                             
 
             
-                        <form action="#" class="checkout__form">
+                        <form action="{{ route('createOrder')}}" method="post" class="checkout__form">
                 <div class="row">
                     <div class="col-lg-8">
                         <h5>Billing detail</h5>

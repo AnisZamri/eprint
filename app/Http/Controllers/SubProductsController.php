@@ -111,11 +111,7 @@ class SubProductsController extends Controller
         return view('customers.product.allCustSubProduct');
     }
     
-    public function CreateOrder(){
-
-        return view('staff.order.createOrder');
-    }
-    
+   
        
     public function DesignOrder(){
 

@@ -4,6 +4,7 @@ use App\Models\z;
 use App\Http\Controllers\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\ProductsController;
@@ -77,6 +78,14 @@ Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remo
 
 Route::get('/products/subproducts/checkout', [CartController::class,'CustCheckout'])->name('custCheckout');
 
+/*********************ORDER***************/
+
+Route::post('/order', [OrderController::class,'CreateOrder'])->name('createOrder');
+
+
+
+
+
 
 
 
@@ -113,7 +122,7 @@ Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->
 
 
 /*cust create order*/
-Route::get('/products/subproducts/order', [SubProductsController::class,'CreateOrder'])->name('createOrder');
+
 
 /*cust create order*/
 Route::get('/products/subproducts/order/design', [SubProductsController::class,'DesignOrder'])->name('designOrder');
