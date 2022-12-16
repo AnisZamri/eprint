@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SubProducts;
+use App\Models\User;
 
+use App\Models\SubProducts;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -83,8 +84,8 @@ class CartController extends Controller
     {  
         
  
-
-                return view ('customers.order.cust_checkout');
+$users=User::all();
+                return view ('customers.order.cust_checkout',compact('users'));
 
            
     }

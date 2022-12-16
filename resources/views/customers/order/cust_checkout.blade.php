@@ -31,88 +31,82 @@
                 </div>
             </div>
 
-            <form action="#" class="checkout__form">
+           
+                                            
+
+            
+                        <form action="#" class="checkout__form">
                 <div class="row">
                     <div class="col-lg-8">
                         <h5>Billing detail</h5>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>First Name <span>*</span></p>
-                                    <input type="text" id="name" >
 
-                                </div>
-                            </div>
+
+
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
-                                    <p>Last Name <span>*</span></p>
-                                    <input type="text">
+                                    <p><b>Full Name <span></span></b></p>
+                                    <p>{{ Auth::user()->name }}</p>
                                 </div>
                             </div>
+                                                     
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                <p><b>Phone Number <span></span></b></p>
+                                    <p>+60</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                <br><p><b>Email <span></span></b></p>
+                                    <p>{{ Auth::user()->email }}</p>
+                                </div>
+                            </div>
+
+                          
                             <div class="col-lg-12">
                                 <div class="checkout__form__input">
-                                    <p>Country <span>*</span></p>
-                                    <input type="text">
+                                <br><p><b>Address <span></span></b></p>
+                                <p>No 1, Jalan Ipoh,51200 Wilayah Persekutuan Kuala Lumpur</p>
                                 </div>
-                                <div class="checkout__form__input">
-                                    <p>Address <span>*</span></p>
-                                    <input type="text" placeholder="Street Address">
-                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )">
-                                </div>
-                                <div class="checkout__form__input">
-                                    <p>Town/City <span>*</span></p>
-                                    <input type="text">
-                                </div>
-                                <div class="checkout__form__input">
-                                    <p>Country/State <span>*</span></p>
-                                    <input type="text">
-                                </div>
-                                <div class="checkout__form__input">
-                                    <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text">
-                                </div>
+                               
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>Phone <span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>Email <span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
+                          
+                                               
                             <div class="col-lg-12">
-                                <div class="checkout__form__checkbox">
-                                    <label for="acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing
-                                        customer login at the <br />top of the page</p>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Account Password <span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                    <div class="checkout__form__checkbox">
-                                        <label for="note">
-                                            Note about your order, e.g, special noe for delivery
-                                            <input type="checkbox" id="note">
+                                <div class="checkout__form__checkbox"><br><br>
+                                        <label for="acc">Ship to a different address?
+                                            <input type="checkbox" id="acc" onclick="myFunction()" >
                                             <span class="checkmark"></span>
                                         </label>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Oder notes <span>*</span></p>
-                                        <input type="text"
-                                        placeholder="Note about your order, e.g, special noe for delivery">
-                                    </div>
+                                    
                                 </div>
+                                    
+                            </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div id="text" style="display:none" class="checkout__form__input">
+
+                                        <p>First Name <span>*</span></p>
+                                        <input type="text">
+
+                                        <p>Phone Number <span>*</span></p>
+                                        <input type="text">
+                                
+                                        <p>Email <span></span></b></p>
+                                        <input type="text">
+
+                                        <br><p>Address <span>*</span></p>
+                                        <input type="text">
                             </div>
                         </div>
+
+                    </div>
+                </div>
+
+
                         <div class="col-lg-4">
                             <div class="checkout__order">
                                 <h5>Your order</h5>
@@ -167,62 +161,7 @@
         </section>
         <!-- Checkout Section End -->
 
-        <!-- Instagram Begin -->
-        <div class="instagram">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                        <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg">
-                            <div class="instagram__text">
-                                <i class="fa fa-instagram"></i>
-                                <a href="#">@ ashion_shop</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Instagram End -->
+     
 
         <!-- Footer Section Begin -->
         <footer class="footer">
@@ -307,8 +246,23 @@
         </div>
         <!-- Search End -->
 
+
+        <script>
+function myFunction() {
+  var checkBox = document.getElementById("acc");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+</script>
     </body>
 
     </html>
+
+                                      
+
 @endsection
  

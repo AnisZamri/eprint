@@ -59,7 +59,12 @@
                         <div class="offcanvas__widget"> 
                             <div class="container">
                                 <div class="row">
-
+                                <li>
+              <a  href="{{route('logout')}}" >
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
                                     <div class="header__right__auth">
                                         <a href="#">Login</a>
                                          <a href="#">Register</a>
