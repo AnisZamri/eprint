@@ -110,7 +110,6 @@
               </div>
     </section>
 
-    <div class="card">
 
             @if (session('success'))
 
@@ -125,61 +124,70 @@
             @endif
 
 
-          <!-- VIEW TABLE PRODUCT -->
+         
 
-            <div class="card-body">
-              <h5 class="card-title">All Sub Products</h5>
+           
 
-              <!-- Table with hoverable rows -->
-              <table class="table table-hover">
-              <thead> 
-    <tr> 
-      <th scope="col">No</th> 
-      <th scope="col">Product Category</th> 
-      <th scope="col">Product Image</th> 
-      <th scope="col">Product Name</th> 
-      <th scope="col">Product Quantity</th> 
-      <th scope="col">Product Description</th> 
-      <th scope="col">Product Price</th> 
 
-    </tr> 
-  </thead> 
- 
-  <tbody> 
-    @foreach($subproduct as $subproduct) 
+          <!-- Recent Sales -->
+    <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+               
+
+                <div class="card-body">
+                  <h5 class="card-title">All Sub Products <span>| </span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                    <tr> 
+                      <th scope="col">No</th> 
+                      <th scope="col">Product Category</th> 
+                      <th scope="col">Product Image</th> 
+                      <th scope="col">Product Name</th> 
+                      <th scope="col">Product Description</th> 
+                      <th scope="col">Product Price</th> 
+                      <th scope="col">Action</th> 
+
+
+                    </tr> 
+
+                    </thead>
+                   
+                    <tbody> 
+
+                    @foreach($subproduct as $subproduct) 
       <tr> 
         <td>{{$subproduct->id}}</td> 
         <td>{{ $subproduct['products']['productCategory'] }}  </td>
 
         <td><img src="{{asset($subproduct->subProductImage)}}" style="height:40px;"></td> 
         <td>{{$subproduct->subProductName}}</td> 
-        <td>{{$subproduct->subProductQuantity}}</td> 
         <td>{{$subproduct->subProductDesc}}</td> 
         <td>{{$subproduct->subProductPrice}}</td> 
 
         <td> 
 
-        <a href=" {{ route('editSubProduct', $subproduct->id ) }}"class="btn btn-primary">Edit</a> 
+        <a href=" {{ route('editSubProduct', $subproduct->id ) }}"class="btn btn-secondary">Edit</a> 
           <a href="{{url('sub/delete/'.$subproduct->id)}}"class="btn btn-danger">Delete</a> 
         </td> 
 
       </tr> 
     @endforeach 
-     
-  </tbody> 
 
-              </table>
-              <!-- End Table with hoverable rows -->
+                </tbody>
 
-           
+                      
+                  </table>
 
-              
+                </div>
 
-
-            </div>
-          </div>
+              </div>
+            </div><!-- End Recent Sales -->
 
   </main><!-- End #main -->
+
+    
 
  
 
