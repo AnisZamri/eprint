@@ -35,7 +35,7 @@ Route::get('/', function () {
 Route::post('/products/add', [ProductsController::class,'AddProducts'])->name('addProducts');
 Route::get('/staff/products/allLatest', [ProductsController::class,'ViewProduct'])->name('ViewProduct');
 Route::get('/products/edit/{id}', [ProductsController::class,'EditProduct'])->name('editProduct');
-Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct']);
+Route::post('/products/update/{id}', [ProductsController::class,'UpdateProduct'])->name('updateProduct');
 Route::get('/products/delete/{id}', [ProductsController::class,'DeleteProduct']);
 
 Route::get('/staff/products/test', [ProductsController::class,'ViewTestProduct'])->name('ViewTestProduct');
@@ -65,11 +65,6 @@ Route::get('/products/subproductsDetails/{id}', [IndexController::class,'CustVie
 
 /*********************ADD TO CARTT***************/
 
-Route::get('/products/subproducts/cart/{id}', [IndexController::class,'CustCart'])->name('custCart');
-Route::get('/products/subproducts/cart/store/', [CartController::class,'CartStore'])->name('cartStore');
-
-
-
 Route::get('/subproductTest', [CartController::class, 'index'])->name('subProductTest');
 Route::get('viewCartTest', [CartController::class, 'viewCartTest'])->name('viewCartTest');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
@@ -80,7 +75,7 @@ Route::get('/products/subproducts/checkout', [CartController::class,'CustCheckou
 
 /*********************ORDER***************/
 
-Route::post('/order', [OrderController::class,'CreateOrder'])->name('createOrder');
+Route::post('/customers/order/cust_checkout', [OrderController::class,'CreateOrder'])->name('createOrder');
 
 
 

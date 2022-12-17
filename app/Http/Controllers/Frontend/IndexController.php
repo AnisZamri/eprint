@@ -30,12 +30,7 @@ class IndexController extends Controller
      }
 
    
-    //cust view cart 
-    public function CustCart($id)
-      {  $subproduct=SubProducts::where('id',$id)->get();
-
-    return view('customers.subproduct.cust_cart',compact('subproduct'));
-    }
+  
 
     
 

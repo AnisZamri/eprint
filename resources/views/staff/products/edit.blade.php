@@ -23,7 +23,7 @@
 
               <!-- General Form Elements -->
               
-    <form action="{{ route('updateSubProduct', $products->id) }}" method="POST" enctype="multipart/form-data">  
+    <form action="{{ route('updateProduct', $products->id) }}" method="POST" enctype="multipart/form-data">  
                         @csrf 
 
                         <input type="hidden" name="old_image" value="{{$products->productImage}}">

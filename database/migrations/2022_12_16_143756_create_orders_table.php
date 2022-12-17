@@ -16,18 +16,19 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) 
         {
             $table->id();
+            $table->unsignedBigInteger('custId');     
             $table->string('orderName');
             $table->string('orderPhone');
             $table->string('orderEmail');        
             $table->string('orderAddress');
-            $table->string('orderDate');
             $table->float('orderTotalPrice',8,2);
             $table->string('orderUploadReceipt');
-            $table->string('orderInvoice');
             $table->string('orderStatus');
             $table->timestamps();
 
-        });
+        });       
+
+
     }
 
     /**
@@ -40,3 +41,4 @@ return new class extends Migration
         Schema::dropIfExists('orders');
     }
 };
+
