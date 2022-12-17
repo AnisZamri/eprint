@@ -28,9 +28,18 @@ class OrderController extends Controller
             'created_at'=>Carbon::now()
         ]);
 
-       
-
         return Redirect()->back();
     }
+
+  
+    public function ViewOrder(){
+           
+        $orders=Orders::all();
+        return view('staff.order.viewOrder',compact('orders'));
+    
+    }
+
+  
+
     
 }

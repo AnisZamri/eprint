@@ -18,27 +18,17 @@
           
       <li>
         <a href="{{ route ('ViewProduct') }}">
-          <i class="bi bi-circle"></i><span>Add Products</span>
+          <i class="bi bi-circle"></i><span>Manage Products</span>
         </a>
       </li>
       
       <li>
         <a href="{{ route ('ViewSubProduct') }}">
-          <i class="bi bi-circle"></i><span>Add Sub Products</span>
+          <i class="bi bi-circle"></i><span>Manage Sub Products</span>
         </a>
       </li>
 
-      <li>
-        <a href="{{ route ('ViewTestProduct') }}">
-          <i class="bi bi-circle"></i><span>Add Test Products</span>
-        </a>
-      </li>
-     
-      <li>
-        <a href="components-alerts.html">
-          <i class="bi bi-circle"></i><span>Sticker</span>
-        </a>
-      </li>
+      
       
     </ul>
   </li><!-- End Components Nav -->
@@ -49,25 +39,11 @@
     </a>
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ route ('viewStaffOrder') }}">
-          <i class="bi bi-circle"></i><span>All Orders</span>
+        <a href="{{ route ('viewOrder') }}">
+          <i class="bi bi-circle"></i><span>Manage Orders</span>
         </a>
       </li>
-      <li>
-        <a href="">
-          <i class="bi bi-circle"></i><span>Form Layouts</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-editors.html">
-          <i class="bi bi-circle"></i><span>Form Editors</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-validation.html">
-          <i class="bi bi-circle"></i><span>Form Validation</span>
-        </a>
-      </li>
+     
     </ul>
   </li><!-- End Forms Nav -->
 

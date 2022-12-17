@@ -112,20 +112,6 @@ class SubProductsController extends Controller
     }
     
    
-       
-    public function DesignOrder(){
-
-        return view('staff.order.designOrder');
-    }
-    
-    //cust view subproduct
-    public function ViewStaffOrder(){
-
-        return view('staff.order.viewStaffOrder');
-    }
-
-  
-
      //staff delete order
 
     public function StaffDeleteOrder(){

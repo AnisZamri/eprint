@@ -50,7 +50,9 @@ Route::post('/sub/update/{id}', [SubProductsController::class,'UpdateSubProduct'
 Route::get('/sub/delete/{id}', [SubProductsController::class,'DeleteSubProduct']);
 
 
+/*********************MANAGE ORDER***************/
 
+Route::get('/staff/order', [OrderController::class,'ViewOrder'])->name('viewOrder');
 
 
 
@@ -116,23 +118,7 @@ Route::get('/staff/sub/all', [SubProductsController::class,'SubProductsView'])->
 /*********************ORDER**************/
 
 
-/*cust create order*/
 
-
-/*cust create order*/
-Route::get('/products/subproducts/order/design', [SubProductsController::class,'DesignOrder'])->name('designOrder');
-
-
-/*staff view order*/
-Route::get('/staff/order', [SubProductsController::class,'ViewStaffOrder'])->name('viewStaffOrder');
-
-
-/*staff choose order*/
-Route::get('/chooseorder', [SubProductsController::class,'ViewOrder'])->name('viewOrder');
-
-
-/*staff delete order*/
-Route::get('/deleteOrder', [SubProductsController::class,'StaffDeleteOrder'])->name('staffDeleteOrder');
 
 /*cust add cart*/
 Route::get('/cart', [SubProductsController::class,'ViewCart'])->name('viewCart');

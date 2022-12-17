@@ -153,29 +153,26 @@
                     </tr> 
 
                     </thead>
-                   
+                    @php($i=1)
+
                     <tbody> 
+                        @foreach($subproduct as $subproduct) 
+                          <tr> 
+                          <td>{{$i++}}</td> 
+                            <td>{{ $subproduct['products']['productCategory'] }}  </td>
+                            <td><img src="{{asset($subproduct->subProductImage)}}" style="height:40px;"></td> 
+                            <td>{{$subproduct->subProductName}}</td> 
+                            <td>{{$subproduct->subProductDesc}}</td> 
+                            <td>{{$subproduct->subProductPrice}}</td> 
+                            
+                            <td>
+                              <a href=" {{ route('editSubProduct', $subproduct->id ) }}"class="btn btn-secondary">Edit</a> 
+                                <a href="{{url('sub/delete/'.$subproduct->id)}}"class="btn btn-danger">Delete</a> 
+                            </td> 
 
-                    @foreach($subproduct as $subproduct) 
-      <tr> 
-        <td>{{$subproduct->id}}</td> 
-        <td>{{ $subproduct['products']['productCategory'] }}  </td>
-
-        <td><img src="{{asset($subproduct->subProductImage)}}" style="height:40px;"></td> 
-        <td>{{$subproduct->subProductName}}</td> 
-        <td>{{$subproduct->subProductDesc}}</td> 
-        <td>{{$subproduct->subProductPrice}}</td> 
-
-        <td> 
-
-        <a href=" {{ route('editSubProduct', $subproduct->id ) }}"class="btn btn-secondary">Edit</a> 
-          <a href="{{url('sub/delete/'.$subproduct->id)}}"class="btn btn-danger">Delete</a> 
-        </td> 
-
-      </tr> 
-    @endforeach 
-
-                </tbody>
+                          </tr> 
+                        @endforeach 
+                    </tbody>
 
                       
                   </table>
