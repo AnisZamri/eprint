@@ -31,7 +31,9 @@
                 </div>
             </div>
 
-            <form action="{{ route('createOrder')}}" method="POST" enctype="multipart/form-data">
+            
+
+            <form action="{{ route('createOrder')}}" method="POST" enctype="multipart/form-data"  class="checkout__form">
 
             @csrf
                 <div class="row">
