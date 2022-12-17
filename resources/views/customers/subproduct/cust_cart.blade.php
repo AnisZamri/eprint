@@ -60,13 +60,16 @@
                                                     <div class="row">
                                                         <div class="col-sm-9">
                                                             <h6 class="nomargin">{{ $details['product_name'] }}</h6>
+
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td data-th="Price">RM{{ $details['price'] }}</td>
+                                                <input type="text" name="orderPrice"  id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $details['price'] }}" hidden> 
+
 
                                                 <td data-th="Quantity">
-                                                     <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
+                                                     <input type="number" name="orderQuantity" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
                                                 </td>
 
                                                
@@ -77,8 +80,7 @@
                                                 <td class="cart_remove" data-th="">
                                                     <i class="fa fa-times"></i> 
                                                 </td>
-
-
+                                             
                                             </tr>
                                         @endforeach
                                     @endif

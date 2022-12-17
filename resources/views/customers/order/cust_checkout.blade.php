@@ -105,15 +105,21 @@
                                     </ul>
                                 </div>
 
+                              
+
                                 <div class="checkout__order__total">
                                     <ul>
 
                                         @php $total = 0 @endphp
 
                                         @foreach((array) session('cart') as $id => $details)
+                                        <input type="text" name="orderQuantity"  id="orderQuantity" aria-describedby="emailHelp" value="{{$details['quantity']}}" hidden>                                
+                                 <input type="text" name="orderPrice"  id="orderPrice" aria-describedby="emailHelp" value="{{$details['price']}}" hidden> 
+
                                             @php $total += $details['price'] * $details['quantity'] @endphp
                                         @endforeach
                                     
+                                        
                                         <li>Subtotal <span>RM{{ $total }}</span></li>
                                         <input type="text" name="orderTotalPrice"  id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $total }}" hidden> 
                                      
@@ -128,6 +134,12 @@
                                     <p>Please make your payment directly into our bank account before checkout. Your order status will not be change to "In Process" until the funds have cleared in our account.</p>
                                     <input type="file" name="orderUploadReceipt"  id="exampleInputEmail1" aria-describedby="emailHelp"> 
                                 </div>
+                            
+                               
+
+
+
+
 
 
                                 <br><button type="submit" class="site-btn">Place order</button>

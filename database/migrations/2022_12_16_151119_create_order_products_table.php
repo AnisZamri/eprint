@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('order_products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('orderId');     
+            $table->unsignedBigInteger('orderId');    
+            $table->foreign('orderId')->references('id')->on('orders')->onDelete('cascade'); 
             $table->unsignedBigInteger('productsId');
             $table->string('orderQuantity');
             $table->float('orderPrice',8,2);
             $table->timestamps();
         });
     }
+
+
 
     /**
      * Reverse the migrations.
