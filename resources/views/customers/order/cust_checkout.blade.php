@@ -99,11 +99,18 @@
                                              @foreach(session('cart') as $id => $details)
 
                                             <li>{{ $details['product_name'] }}<span>RM{{ $details['price'] * $details['quantity'] }}</span></li>
-                                                                        
+
+                                            <input type="text" name="subProductId"  id="subProductId" aria-describedby="emailHelp" value="{{$id}}" > 
+
+                          
                                             @endforeach
                                          @endif
+
+
                                     </ul>
                                 </div>
+
+
 
                               
 

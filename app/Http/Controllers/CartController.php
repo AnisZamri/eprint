@@ -37,6 +37,7 @@ class CartController extends Controller
             $cart[$id]['quantity']++;
         }  else {
             $cart[$id] = [
+                'subProductId' => $subproduct->subProductId,
                 'product_name' => $subproduct->subProductName,
                 'photo' => $subproduct->subProductImage,
                 'price' => $subproduct->subProductPrice,
@@ -57,6 +58,8 @@ class CartController extends Controller
             session()->flash('success', 'Cart successfully updated!');
         }
     }
+
+    
  
     public function remove(Request $request)
     {

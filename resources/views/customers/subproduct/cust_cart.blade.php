@@ -61,6 +61,7 @@
                                                         <div class="col-sm-9">
                                                             <h6 class="nomargin">{{ $details['product_name'] }}</h6>
 
+
                                                         </div>
                                                     </div>
                                                 </td>
@@ -121,6 +122,7 @@
 
                                     @foreach((array) session('cart') as $id => $details)
                                         @php $total += $details['price'] * $details['quantity'] @endphp
+
                                     @endforeach
                                 
                                     <li>Subtotal <span>RM{{ $total }}</span></li>

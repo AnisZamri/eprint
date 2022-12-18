@@ -10,7 +10,7 @@ class OrderProductController extends Controller
 
         OrdersProducts:insert([
             'orderId'=>$request->orderId,
-            'productsId'=>$request->productsId,
+            'subProductId'=>$request->subProductId,
             'orderQuantity'=>$request->orderQuantity,
             'orderPrice'=>$request->orderPrice,
     
@@ -20,3 +20,4 @@ class OrderProductController extends Controller
         return redirect()->back();
     }
 }
+

@@ -29,15 +29,22 @@ class OrderController extends Controller
             'created_at'=>Carbon::now()
         ]);
 
-        // OrderProducts::insert
-        // ([
-        //     'orderId'=>$orderId,
-        //     'productsId'=>$request->productsId,
-        //     'orderQuantity'=>$request->orderQuantity,
-        //     'orderPrice'=>$request->orderPrice,
-        //     'created_at'=>Carbon::now()
 
-        // ]);
+
+
+            foreach(session()->get('cart', []) as $key=>$value)
+            {
+
+                OrderProducts::insert
+                ([
+                    'orderId'=>$orderId,
+                    'subProductId'=>$key->subProductId,
+                    'orderQuantity'=>$key->orderQuantity,
+                    'orderPrice'=>$key->orderPrice,
+                    'created_at'=>Carbon::now()
+
+                ]);
+            };
 
         return Redirect()->back();
     }

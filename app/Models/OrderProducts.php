@@ -13,7 +13,7 @@ class OrderProducts extends Model
 
 
     'orderId',
-            'productsId',
+            'subProductId',
             'orderQuantity',
             'orderPrice',
         ];
