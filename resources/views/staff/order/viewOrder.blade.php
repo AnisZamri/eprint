@@ -67,7 +67,7 @@
                         <th scope="row">{{$i++}}</th> 
                         <td>{{$orders->created_at}}</td>
                         <td>{{$orders->orderName}}</td>
-                        <td>{{$orders->orderName}}</td>
+                        <td>{{$orders->orderProduct}}</td>
                         <td>{{$orders->orderTotalPrice}}</td>
 
                         <td><span class="badge bg-success">Approved</span></td>

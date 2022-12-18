@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('orderId');    
             $table->foreign('orderId')->references('id')->on('orders')->onDelete('cascade'); 
             $table->unsignedBigInteger('subProductId');
+            $table->string('orderProduct');
             $table->string('orderQuantity');
             $table->float('orderPrice',8,2);
             $table->timestamps();

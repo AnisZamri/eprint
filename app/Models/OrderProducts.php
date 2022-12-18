@@ -12,8 +12,9 @@ class OrderProducts extends Model
     protected $fillable=[
 
 
-    'orderId',
+            'orderId',
             'subProductId',
+            'orderProduct',
             'orderQuantity',
             'orderPrice',
         ];

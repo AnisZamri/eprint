@@ -29,23 +29,32 @@ class OrderController extends Controller
             'created_at'=>Carbon::now()
         ]);
 
+        $cart = session()->get('cart', []);
+        // echo '<pre>';
+        // print_r($cart);
+        // echo '<pre>';
+        // die();
 
+        $d =0;
+        foreach($cart as $cart)
+        // for($i=0; $i<10; $i++)
+        {
 
+            OrderProducts::insert
+            ([
+                'orderId'=>$orderId,
+                'subProductId'=>$request->id[$d],
+                'orderQuantity'=>$request->orderQuantity,
+                'orderProduct'=>$request->product_name,
 
-            foreach(session()->get('cart', []) as $key=>$value)
-            {
+                'orderPrice'=>$request->orderPrice,
+                'created_at'=>Carbon::now()
 
-                OrderProducts::insert
-                ([
-                    'orderId'=>$orderId,
-                    'subProductId'=>$key->subProductId,
-                    'orderQuantity'=>$key->orderQuantity,
-                    'orderPrice'=>$key->orderPrice,
-                    'created_at'=>Carbon::now()
+            ]);
+            $d++;
+        };
 
-                ]);
-            };
-
+            
         return Redirect()->back();
     }
 
@@ -53,7 +62,9 @@ class OrderController extends Controller
     public function ViewOrder(){
            
         $orders=Orders::all();
-        return view('staff.order.viewOrder',compact('orders'));
+        $orderProducts=OrderProducts::all();
+
+        return view('staff.order.viewOrder',compact('orders','orderProducts'));
     
     }
 
