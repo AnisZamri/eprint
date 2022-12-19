@@ -99,9 +99,7 @@
                                              @foreach(session('cart') as $id => $details)
 
                                             <li>{{ $details['product_name'] }}<span>RM{{ $details['price'] * $details['quantity'] }}</span></li>
-                                            <input type="text" name="product_name"  id="product_name" aria-describedby="emailHelp" value="{{$details['product_name']}}" > 
 
-                                            <input type="text" name="id[]"  id="id" aria-describedby="emailHelp" value="{{$id}}" > 
 
                           
                                             @endforeach
@@ -121,8 +119,6 @@
                                         @php $total = 0 @endphp
 
                                         @foreach((array) session('cart') as $id => $details)
-                                        <input type="text" name="orderQuantity"  id="orderQuantity" aria-describedby="emailHelp" value="{{$details['quantity']}}" hidden>                                
-                                 <input type="text" name="orderPrice"  id="orderPrice" aria-describedby="emailHelp" value="{{$details['price']}}" hidden> 
 
                                             @php $total += $details['price'] * $details['quantity'] @endphp
                                         @endforeach

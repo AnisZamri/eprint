@@ -35,24 +35,20 @@ class OrderController extends Controller
         // echo '<pre>';
         // die();
 
-        $d =0;
-        foreach($cart as $cart)
-        // for($i=0; $i<10; $i++)
-        {
+        
 
+        foreach($cart as $key=>$val){
             OrderProducts::insert
             ([
-                'orderId'=>$orderId,
-                'subProductId'=>$request->id[$d],
-                'orderQuantity'=>$request->orderQuantity,
-                'orderProduct'=>$request->product_name,
-
-                'orderPrice'=>$request->orderPrice,
-                'created_at'=>Carbon::now()
-
+                'orderId' => $orderId,
+                'subProductId' => $val['id'],
+                'orderQuantity' => $val['quantity'],
+                'orderProduct' => $val['product_name'],
+                'orderPrice' => $val['price'],
+                'created_at' => Carbon::now()
+                
             ]);
-            $d++;
-        };
+          }
 
             
         return Redirect()->back();
