@@ -61,12 +61,14 @@
                     <tbody>
 
                     @foreach($orders as $orders) 
-
+                    
                       <tr>
                       
                         <th scope="row">{{$i++}}</th> 
                         <td>{{$orders->created_at}}</td>
                         <td>{{$orders->orderName}}</td>
+                        <td>{{ $orderProducts['sub_products']['orderProduct'] }}  </td>
+
                         <td>{{$orders->orderProduct}}</td>
                         <td>{{$orders->orderTotalPrice}}</td>
 
